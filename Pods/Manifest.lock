@@ -1,0 +1,74 @@
+PODS:
+  - Alamofire (5.0.5)
+  - EasyJSBridge (1.0.1)
+  - HandyJSON (5.0.1)
+  - ISVImageScrollView (0.1.2)
+  - Kingfisher (5.13.3):
+    - Kingfisher/Core (= 5.13.3)
+  - Kingfisher/Core (5.13.3)
+  - MJRefresh (3.3.1)
+  - MMLayout (0.2.0)
+  - ReactiveObjC (3.1.1)
+  - SDWebImage (5.5.2):
+    - SDWebImage/Core (= 5.5.2)
+  - SDWebImage/Core (5.5.2)
+  - SnapKit (5.0.1)
+  - Toast (4.0.0)
+  - TXIMSDK_iOS (4.7.1)
+  - TXIMSDK_TUIKit_iOS (4.6.100):
+    - ISVImageScrollView (= 0.1.2)
+    - MMLayout (= 0.2.0)
+    - ReactiveObjC (= 3.1.1)
+    - SDWebImage (= 5.5.2)
+    - Toast (= 4.0.0)
+    - TXIMSDK_iOS
+  - VTMagic (1.2.4):
+    - VTMagic/Core (= 1.2.4)
+  - VTMagic/Core (1.2.4)
+
+DEPENDENCIES:
+  - Alamofire
+  - EasyJSBridge
+  - HandyJSON
+  - Kingfisher
+  - MJRefresh
+  - SnapKit
+  - TXIMSDK_TUIKit_iOS
+  - VTMagic
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - EasyJSBridge
+    - HandyJSON
+    - ISVImageScrollView
+    - Kingfisher
+    - MJRefresh
+    - MMLayout
+    - ReactiveObjC
+    - SDWebImage
+    - SnapKit
+    - Toast
+    - TXIMSDK_iOS
+    - TXIMSDK_TUIKit_iOS
+    - VTMagic
+
+SPEC CHECKSUMS:
+  Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
+  EasyJSBridge: 3816af2a5bb00ffd71b8ed1bbed54fbcc1a62e52
+  HandyJSON: d45b8415c501e3affc59ca9762c1197ff0feb646
+  ISVImageScrollView: ba511d12a1661b40feb8921309c0854bf93ec749
+  Kingfisher: d2b3d6a7200c93b34de9afcdf25c8dd9282ec277
+  MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
+  MMLayout: 3fb59d58eeb8656c64e61d550fb0088e10666c11
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+  SDWebImage: 4d5c027c935438f341ed33dbac53ff9f479922ca
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+  TXIMSDK_iOS: 2506b27cfdf2aea3e4433b67870755d3a14b358c
+  TXIMSDK_TUIKit_iOS: 7c5a6556929b590e3d2cfb85a865a3c5b28f4d87
+  VTMagic: b49e5f456dbcbfd9a3588ba92417233a105bc193
+
+PODFILE CHECKSUM: 59394322b3f5c10668debaf64d3e4805d331f021
+
+COCOAPODS: 1.9.1

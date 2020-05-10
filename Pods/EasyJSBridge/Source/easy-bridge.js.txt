@@ -1,0 +1,101 @@
+// 此JS脚本为JS-SDK中间层。负责协调Native层和JS层的交互。
+(function () {
+    if (window.EasyJSBridge) {
+        return;
+    }
+    var CUSTOM_PROTOCOL_SCHEME = "easy-jsbridge";
+    var QUEUE_HAS_MESSAGE = '__QUEUE_MESSAGE__';
+    var messagingIframe;
+    var messageHandlers = {};
+    var responseCallbacks = {};
+    var sendMessageQueue = [];
+    var uniqueId = 1;
+    var _EasyJSBridge = {
+        registerHandler: registerHandler,
+        callHandler: callHandler,
+        _handleMessageFromApp: _handleMessageFromApp,
+        _fetchQueue: _fetchQueue
+    };
+    //注册一个方法供App调用
+    function registerHandler(event, callback) {
+        if (!event || typeof event !== 'string') {
+            return;
+        }
+        if (typeof callback !== 'function') {
+            return;
+        }
+        messageHandlers[event] = callback;
+    }
+
+    //Web端调用App方法
+    function callHandler(handlerName, data, responseCallback) {
+        if (arguments.length == 2 && typeof data == 'function') {
+            responseCallback = data;
+            data = null;
+        }
+
+        _doSend({ handlerName:handlerName, data:data }, responseCallback);
+    }
+    //传递数据给App
+    function _doSend(message, responseCallback) {
+        if (responseCallback) {
+            var callbackId = 'cb_'+(uniqueId++)+'_'+new Date().getTime();
+            responseCallbacks[callbackId] = responseCallback;
+            message['callbackId'] = callbackId;
+        }
+        sendMessageQueue.push(message);
+        messagingIframe.src = CUSTOM_PROTOCOL_SCHEME + '://' + QUEUE_HAS_MESSAGE;
+    }
+    //获取H5端将要发送给App的消息队列
+    function _fetchQueue() {
+        var messageQueueString = JSON.stringify(sendMessageQueue);
+        sendMessageQueue = [];
+        return messageQueueString;
+    }
+    //处理App传递过来的数据
+    function _handleMessageFromApp(messageJSON) {
+        _dispatchMessageFromApp(messageJSON);
+    }
+    function _dispatchMessageFromApp(messageJSON) {
+        var message = JSON.parse(messageJSON);
+        var messageHandler;
+        var responseCallback;
+        if (message.responseId) {
+            responseCallback = responseCallbacks[message.responseId];
+            if (!responseCallback) {
+                return;
+            }
+            responseCallback(message.responseData);
+            delete responseCallbacks[message.responseId];
+        } else {
+            if (message.callbackId) {
+                var callbackResponseId = message.callbackId;
+                responseCallback = function(responseData) {
+                    _doSend({ handlerName:message.handlerName, responseId:callbackResponseId, responseData:responseData });
+                };
+            }
+            var handler = messageHandlers[message.handlerName];
+            if (!handler) {
+                console.log("EasyJSBridge: WARNING: no handler for message from ObjC:", message);
+            } else {
+                handler(message.data, responseCallback);
+            }
+        }
+    }
+
+    messagingIframe = document.createElement('iframe');
+    messagingIframe.style.display = 'none';
+    messagingIframe.src = CUSTOM_PROTOCOL_SCHEME + '://' + QUEUE_HAS_MESSAGE;
+    document.documentElement.appendChild(messagingIframe);
+
+    window.EasyJSBridge = _EasyJSBridge;
+    setTimeout(_callWVJBCallbacks, 0);
+    function _callWVJBCallbacks() {
+        var callbacks = window.WVJBCallbacks;
+        for (var i=0; i<callbacks.length; i++) {
+            callbacks[i](window.EasyJSBridge);
+        }
+        delete window.WVJBCallbacks;
+    }
+
+})();

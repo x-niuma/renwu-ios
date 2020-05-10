@@ -1,0 +1,1 @@
+../../../Target Support Files/EasyJSBridge/EasyJSBridge-umbrella.h

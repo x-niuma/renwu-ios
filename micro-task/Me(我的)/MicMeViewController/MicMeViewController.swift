@@ -1,0 +1,284 @@
+//
+//  Mic2ViewController.swift
+//  micro-task
+//
+//  Created by arraybuffer on 2020/4/6.
+//  Copyright © 2020 airtim. All rights reserved.
+//
+
+import UIKit
+import SnapKit
+import Alamofire
+
+let rote = CGFloat(375.0 / 169.0)
+let bgHeight = kScreenWidth / rote
+
+class MicMeViewController: UIViewController {
+    
+
+    let titles = ["我的接单","我的需求","发布需求","账户设置","立即登录"] // 主菜单
+    var userInfo: MicPerson? = nil // 用户信息
+    var assetInfo: MicUserAssestData? = nil // 资产信息
+    var customNavi : MicMeNavibar!
+    let headerViewH = 170 + 20 + kNavBarAndStatusBarHeight
+    var menu2Btns = [UIButton]()
+    var loginBtn = UIButton()
+    var cellHeight = 50
+    var bgColor = UIColor.hex("#615963")
+    var navColor = UIColor.hex("#615963")
+    
+    // 获取用户信息
+    @objc func getUserInfo() {
+        let userDefaults = UserDefaults.standard
+        let locale = userDefaults.object(forKey: "userInfo")
+        if (locale != nil) {
+            do {
+                let userInfo: MicPerson = try NSKeyedUnarchiver.unarchivedObject(ofClasses: [MicPerson.self], from: locale as! Data) as! MicPerson;
+                self.userInfo = userInfo;
+            } catch {
+                print(error)
+            }
+        }
+        if (self.userInfo != nil) {
+            headerView.updateUserInfo(userInfo: self.userInfo!)
+            if (self.userInfo?.token) != nil {
+                self.getAccountInfo()
+            }
+        }
+    }
+    
+    // 获取牛人榜
+    func getAccountInfo() {
+        let url = getUserAssetsUrl + "?token=\((self.userInfo?.token)!)"
+        AF.request(url).responseJSON { response in
+            if let resData = response.data {
+                let decoder = JSONDecoder()
+                do {
+                    let model = try decoder.decode(MicUserAssestRes.self, from: resData)
+                    if model.retCode == "0" {
+                        if let data = model.data {
+                            self.assetInfo = data
+                            self.headerView.updateMenu(assetInfo: self.assetInfo!)
+                        }
+                    }
+                }
+                catch {
+                    print(error)
+                }
+            }
+        }
+    }
+    
+    lazy var headerView: MicMeUserCard = {
+        let frame = CGRect.init(x: 0, y: 0, width: Int(kScreenWidth), height: Int(headerViewH))
+        let view = MicMeUserCard.init(frame: frame)
+        view.vc = self
+        view.navColor = navColor
+        view.getUserInfo = getUserInfo
+        return view
+    }()
+    
+    lazy var tableView: UITableView = {
+        let t = UITableView.init(frame: .zero, style: .plain)
+        t.delegate = self
+        t.dataSource = self
+        t.contentInset = .init(top: 0, left: 0, bottom: 0, right: 0)
+        t.contentOffset = .init(x: 0, y: 0)
+        t.backgroundColor = UIColor.hex("#f5f5f5")
+        t.contentInsetAdjustmentBehavior = .never
+        return t
+    }()
+    
+    lazy var footerView: UIView = {
+        let footerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: Int(Screen_Width), height: self.titles.count * cellHeight + 24))
+        footerView.backgroundColor = UIColor.hex("#f5f5f5")
+        return footerView
+    }()
+    
+    lazy var coverBg: UIView = {
+        let view = UIView()
+        view.backgroundColor = navColor
+        return view
+    }()
+    
+    lazy var fixedHeader: MicMeHeader = {
+        let header = MicMeHeader.init(frame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: kNavBarAndStatusBarHeight))
+        header.backgroundColor = UIColor.white
+        header.titleLabel.text = "我的"
+        header.saomaBtn.tintColor = UIColor.hex("#888888")
+        header.settingBtn.tintColor = UIColor.hex("#888888")
+        header.alpha = 0
+        return header
+    }()
+    
+    private func makeInitLayout() {
+        fixedHeader.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().offset(0)
+            make.height.equalTo(kNavBarAndStatusBarHeight)
+            make.left.right.equalToSuperview()
+        }
+        tableView.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().offset(0)
+            make.left.bottom.right.equalToSuperview().offset(0)
+        }
+        coverBg.snp.makeConstraints { (make) in
+            make.left.right.equalToSuperview()
+            make.top.equalTo(0)
+            make.height.equalTo(0)
+        }
+    }
+    
+    private func makeInitSubviews() {
+        view.addSubview(tableView)
+        view.addSubview(fixedHeader)
+        view.addSubview(coverBg)
+        tableView.tableHeaderView = headerView
+    }
+    
+    func addFooterMenu() {
+        for (index, value) in titles.enumerated() {
+            let item = UIButton()
+            footerMenu.addSubview(item)
+            item.addTarget(self, action: #selector(handleClickMenu(sender:)), for: .touchUpInside)
+            item.snp.makeConstraints { (make) in
+                make.left.equalToSuperview().offset(0)
+                make.right.equalToSuperview().offset(0)
+                make.top.equalToSuperview().offset(index * cellHeight)
+                make.height.equalTo(cellHeight)
+            }
+            
+            let icon = UIImageView()
+            icon.image = UIImage(named: "bill")?.withRenderingMode(.alwaysTemplate)
+            icon.tintColor = bgColor
+            item.addSubview(icon)
+            icon.snp.makeConstraints { (make) in
+                make.left.equalToSuperview().offset(8)
+                make.centerY.equalToSuperview()
+            }
+            
+            let name = UILabel()
+            item.addSubview(name)
+            name.text = value
+            name.textColor = UIColor.hex("#8a8a8a")
+            name.font = UIFont.systemFont(ofSize: 16)
+            name.snp.makeConstraints { (make) in
+                make.left.equalTo(icon.snp.right).offset(8)
+                make.centerY.equalToSuperview()
+            }
+            
+            if ((index + 1) != titles.count) {
+                let line = UIView()
+                item.addSubview(line)
+                line.backgroundColor = UIColor.hex("#f5f5f5")
+                line.snp.makeConstraints { (make) in
+                    make.left.equalToSuperview().offset(12)
+                    make.right.equalToSuperview().offset(0)
+                    make.height.equalTo(1)
+                    make.bottom.equalToSuperview().offset(0)
+                }
+            }
+            
+            let arrow = UIImageView()
+            arrow.image = UIImage(named: "arrow-right")
+            item.addSubview(arrow)
+            arrow.snp.makeConstraints { (make) in
+                make.centerY.equalToSuperview()
+                make.right.equalToSuperview().offset(-10)
+            }
+        }
+    }
+    
+    lazy var footerMenu: UIView = {
+        let footerMenu = UIView()
+        footerMenu.backgroundColor = UIColor.white
+        footerMenu.layer.cornerRadius = 6
+        footerMenu.layer.masksToBounds = true
+        return footerMenu
+    }()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+        self.getUserInfo()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        makeInitSubviews()
+        makeInitLayout()
+        
+        footerView.addSubview(footerMenu)
+        tableView.tableFooterView = footerView
+        footerMenu.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(16)
+            make.right.equalToSuperview().offset(-16)
+            make.height.equalTo(self.titles.count * cellHeight)
+            make.top.equalToSuperview().offset(12)
+        }
+        addFooterMenu()
+    }
+        
+    @objc func handleClickMenu(sender: UIButton) {
+        for (index, btn) in footerMenu.subviews.enumerated() {
+            if (btn === sender) {
+                if (index == 4) {
+                    let loginView = MicLoginViewController();
+                    loginView.loginCb = {(userInfo: MicPerson) in
+                        self.getUserInfo()
+                    }
+                    self.present(loginView, animated: true){}
+                }
+                if (index == 3) {micro_task.gotoUserInfo(currentVC: self)}
+                if (index == 2) {micro_task.gotoCreateDemand(currentVC: self)}
+                if (index == 1) {micro_task.gotoMyDemand(currentVC: self)}
+                if (index == 0) {micro_task.gotoMyEnroll(currentVC: self)}
+            }
+        }
+    }
+    
+    // 下拉刷新
+    @objc func loadData() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.tableView.refreshControl?.endRefreshing()
+        }
+    }
+    
+    // 往上滑动，offset是增加的，往下是减小的
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset.y
+        let alpha = offset/kNavBarAndStatusBarHeight
+        if (offset <= 0) {
+            coverBg.snp.updateConstraints { (make) in
+                make.height.equalTo(abs(offset))
+            }
+            self.fixedHeader.alpha = 0
+        } else {
+            coverBg.snp.updateConstraints { (make) in
+                make.height.equalTo(0)
+            }
+            self.fixedHeader.alpha = alpha
+        }
+    }
+}
+
+
+extension MicMeViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.title?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellID = "cellID";
+        var cell:UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: cellID)
+        if (cell==nil) {
+            cell = UITableViewCell.init(style: .value1, reuseIdentifier: cellID);
+        }
+        cell.accessoryType = .disclosureIndicator
+        cell.textLabel?.text =  self.titles[indexPath.row]
+        cell.selectionStyle = .none
+        
+        if (indexPath.row == (self.titles.count - 1)) {
+            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: cell.bounds.size.width + 16);
+        }
+        return cell
+    }
+}

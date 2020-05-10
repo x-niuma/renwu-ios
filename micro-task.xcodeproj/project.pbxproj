@@ -1,0 +1,898 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		090D093E2437A167005DFC45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090D093D2437A167005DFC45 /* AppDelegate.swift */; };
+		090D09422437A167005DFC45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090D09412437A167005DFC45 /* ViewController.swift */; };
+		090D09472437A168005DFC45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 090D09462437A168005DFC45 /* Assets.xcassets */; };
+		090D094A2437A168005DFC45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 090D09482437A168005DFC45 /* LaunchScreen.storyboard */; };
+		090D09662437A34F005DFC45 /* MicTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090D09652437A34F005DFC45 /* MicTabbarViewController.swift */; };
+		09167403243AD55300181C41 /* MicNiurenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09167402243AD55300181C41 /* MicNiurenViewController.swift */; };
+		0916740A243AD60600181C41 /* MicHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09167409243AD60600181C41 /* MicHomeViewController.swift */; };
+		091DA0782446AF4800F85B54 /* MicDemandDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091DA0772446AF4800F85B54 /* MicDemandDetailViewController.swift */; };
+		091DA0DF2446E04F00F85B54 /* AnimationTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091DA0DE2446E04F00F85B54 /* AnimationTabBarViewController.swift */; };
+		091DA0E32446E05B00F85B54 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091DA0E12446E05B00F85B54 /* CustomTabBar.swift */; };
+		091DA0E42446E05B00F85B54 /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091DA0E22446E05B00F85B54 /* CustomTabBarViewController.swift */; };
+		091DA0F02446E06400F85B54 /* SuperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091DA0E62446E06400F85B54 /* SuperViewController.swift */; };
+		091DA0F12446E06400F85B54 /* Demo8ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091DA0E72446E06400F85B54 /* Demo8ViewController.swift */; };
+		091DA0F22446E06400F85B54 /* Demo7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091DA0E82446E06400F85B54 /* Demo7ViewController.swift */; };
+		091DA0F32446E06400F85B54 /* Demo6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091DA0E92446E06400F85B54 /* Demo6ViewController.swift */; };
+		091DA0F42446E06400F85B54 /* Demo5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091DA0EA2446E06400F85B54 /* Demo5ViewController.swift */; };
+		091DA0F52446E06400F85B54 /* Demo4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091DA0EB2446E06400F85B54 /* Demo4ViewController.swift */; };
+		091DA0F62446E06400F85B54 /* BadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091DA0EC2446E06400F85B54 /* BadgeViewController.swift */; };
+		091DA0F72446E06400F85B54 /* Demo2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091DA0ED2446E06400F85B54 /* Demo2ViewController.swift */; };
+		091DA0F82446E06400F85B54 /* Demo3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091DA0EE2446E06400F85B54 /* Demo3ViewController.swift */; };
+		091DA0F92446E06400F85B54 /* Demo1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091DA0EF2446E06400F85B54 /* Demo1ViewController.swift */; };
+		091DA0FC2446E0D400F85B54 /* UITabBar+HahnBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091DA0FB2446E0D400F85B54 /* UITabBar+HahnBadge.swift */; };
+		091DA1002446E0DD00F85B54 /* TaoBaoCustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091DA0FE2446E0DD00F85B54 /* TaoBaoCustomTabBarViewController.swift */; };
+		091DA1012446E0DD00F85B54 /* TaoBaoCustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091DA0FF2446E0DD00F85B54 /* TaoBaoCustomTabBar.swift */; };
+		091DA1072446E0E600F85B54 /* SlidingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091DA1032446E0E600F85B54 /* SlidingViewController.swift */; };
+		091DA1082446E0E600F85B54 /* SimpleCustomDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091DA1052446E0E600F85B54 /* SimpleCustomDemoViewController.swift */; };
+		091DA1092446E0E600F85B54 /* SimpleCustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091DA1062446E0E600F85B54 /* SimpleCustomTabBarViewController.swift */; };
+		091DA10C2446E0F200F85B54 /* JDAnimationTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091DA10B2446E0F200F85B54 /* JDAnimationTabBarViewController.swift */; };
+		093B3A8A245BB6E500939188 /* MicNiurenTableViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093B3A89245BB6E500939188 /* MicNiurenTableViewCell2.swift */; };
+		093B3A8C245C650400939188 /* MicChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093B3A8B245C650400939188 /* MicChatTableViewController.swift */; };
+		09496AA42444AB3F00B2558E /* MicUserAssest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09496AA32444AB3F00B2558E /* MicUserAssest.swift */; };
+		09496AA72444B3AE00B2558E /* MicDemandTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09496AA52444B3AE00B2558E /* MicDemandTableViewCell.swift */; };
+		09496AA82444B3AE00B2558E /* MicDemandTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09496AA62444B3AE00B2558E /* MicDemandTableViewCell.xib */; };
+		0953E76E243A06B500554025 /* MicNiurenDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0953E76D243A06B500554025 /* MicNiurenDetailViewController.swift */; };
+		0958637024384341006017A6 /* MicNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0958636F24384341006017A6 /* MicNavigationViewController.swift */; };
+		0958637224387CDD006017A6 /* MicProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0958637124387CDD006017A6 /* MicProject.swift */; };
+		095863782438D348006017A6 /* MicNiuren.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095863772438D348006017A6 /* MicNiuren.swift */; };
+		095884882460551100D86E14 /* RadianGridient.m in Sources */ = {isa = PBXBuildFile; fileRef = 095884872460551100D86E14 /* RadianGridient.m */; };
+		0958848B2460551700D86E14 /* DXRadianLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0958848A2460551700D86E14 /* DXRadianLayerView.m */; };
+		09722D8C244A9F88009FDAF6 /* MicWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722D8B244A9F88009FDAF6 /* MicWebViewController.swift */; };
+		099ADFB2245D31510063A6E1 /* MicMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099ADFB1245D31510063A6E1 /* MicMeViewController.swift */; };
+		099E935D245B0344001C5AAB /* MicMeUserCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099E935C245B0344001C5AAB /* MicMeUserCard.swift */; };
+		09A453AA24504C32009559F7 /* TRefreshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A453A924504C32009559F7 /* TRefreshViewController.swift */; };
+		09A8081D24498E590078E909 /* MicMeNavibar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A8081C24498E590078E909 /* MicMeNavibar.swift */; };
+		09B1DD2124489BB600FC8441 /* MicBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B1DD2024489BB600FC8441 /* MicBaseViewController.swift */; };
+		09B1DD232448BAEE00FC8441 /* MicSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B1DD222448BAEE00FC8441 /* MicSearchViewController.swift */; };
+		09BCBBFF2445E71900918DAB /* MicDemand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BCBBFE2445E71900918DAB /* MicDemand.swift */; };
+		09BCBC01244601E000918DAB /* MicBaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BCBC00244601E000918DAB /* MicBaseResponse.swift */; };
+		09BCBC03244610C400918DAB /* MicUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BCBC02244610C400918DAB /* MicUser.swift */; };
+		09CA9EF8243AE10B0094108B /* MicDemandCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CA9EF7243AE10B0094108B /* MicDemandCategory.swift */; };
+		09CA9EFA243AE86E0094108B /* MicNiurenTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CA9EF9243AE86E0094108B /* MicNiurenTableViewController.swift */; };
+		09CA9F01243B2BFF0094108B /* MicDemandTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CA9F00243B2BFF0094108B /* MicDemandTableViewController.swift */; };
+		09D02DE3243F7EC4001BD3EE /* MicLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D02DE1243F7EC4001BD3EE /* MicLoginViewController.swift */; };
+		09D02DE4243F7EC4001BD3EE /* MicLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D02DE2243F7EC4001BD3EE /* MicLoginViewController.xib */; };
+		09D7497F2442FDC700FEA5FF /* MicPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D7497E2442FDC700FEA5FF /* MicPerson.swift */; };
+		09D7498124431BB400FEA5FF /* MicAPP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D7498024431BB400FEA5FF /* MicAPP.swift */; };
+		09D749872443453C00FEA5FF /* HMBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D749862443453C00FEA5FF /* HMBaseModel.swift */; };
+		09EC048B24395F06006ADFF2 /* MicChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EC048924395F06006ADFF2 /* MicChatViewController.swift */; };
+		09EC048C24395F06006ADFF2 /* MicChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09EC048A24395F06006ADFF2 /* MicChatViewController.xib */; };
+		09EC048F243960D3006ADFF2 /* MicNiurenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EC048D243960D3006ADFF2 /* MicNiurenTableViewCell.swift */; };
+		09EC0490243960D3006ADFF2 /* MicNiurenTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09EC048E243960D3006ADFF2 /* MicNiurenTableViewCell.xib */; };
+		09F60757244757CF00C960F5 /* MicExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F60756244757CF00C960F5 /* MicExtend.swift */; };
+		09FB5A9F245842BE005E3C5B /* MicMeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FB5A9E245842BE005E3C5B /* MicMeHeader.swift */; };
+		F23132A0FD11B4539BE03A4C /* libPods-micro-task.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 843812BD997D5F621B0F115F /* libPods-micro-task.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		090005E0244DF960009FC8D0 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		090D093A2437A167005DFC45 /* micro_task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = micro_task.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		090D093D2437A167005DFC45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		090D09412437A167005DFC45 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		090D09462437A168005DFC45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		090D09492437A168005DFC45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		090D094B2437A168005DFC45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		090D09652437A34F005DFC45 /* MicTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicTabbarViewController.swift; sourceTree = "<group>"; };
+		09167402243AD55300181C41 /* MicNiurenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicNiurenViewController.swift; sourceTree = "<group>"; };
+		09167409243AD60600181C41 /* MicHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicHomeViewController.swift; sourceTree = "<group>"; };
+		091DA0772446AF4800F85B54 /* MicDemandDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicDemandDetailViewController.swift; sourceTree = "<group>"; };
+		091DA0DE2446E04F00F85B54 /* AnimationTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationTabBarViewController.swift; sourceTree = "<group>"; };
+		091DA0E12446E05B00F85B54 /* CustomTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		091DA0E22446E05B00F85B54 /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
+		091DA0E62446E06400F85B54 /* SuperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperViewController.swift; sourceTree = "<group>"; };
+		091DA0E72446E06400F85B54 /* Demo8ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Demo8ViewController.swift; sourceTree = "<group>"; };
+		091DA0E82446E06400F85B54 /* Demo7ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Demo7ViewController.swift; sourceTree = "<group>"; };
+		091DA0E92446E06400F85B54 /* Demo6ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Demo6ViewController.swift; sourceTree = "<group>"; };
+		091DA0EA2446E06400F85B54 /* Demo5ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Demo5ViewController.swift; sourceTree = "<group>"; };
+		091DA0EB2446E06400F85B54 /* Demo4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Demo4ViewController.swift; sourceTree = "<group>"; };
+		091DA0EC2446E06400F85B54 /* BadgeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeViewController.swift; sourceTree = "<group>"; };
+		091DA0ED2446E06400F85B54 /* Demo2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Demo2ViewController.swift; sourceTree = "<group>"; };
+		091DA0EE2446E06400F85B54 /* Demo3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Demo3ViewController.swift; sourceTree = "<group>"; };
+		091DA0EF2446E06400F85B54 /* Demo1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Demo1ViewController.swift; sourceTree = "<group>"; };
+		091DA0FB2446E0D400F85B54 /* UITabBar+HahnBadge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITabBar+HahnBadge.swift"; sourceTree = "<group>"; };
+		091DA0FE2446E0DD00F85B54 /* TaoBaoCustomTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaoBaoCustomTabBarViewController.swift; sourceTree = "<group>"; };
+		091DA0FF2446E0DD00F85B54 /* TaoBaoCustomTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaoBaoCustomTabBar.swift; sourceTree = "<group>"; };
+		091DA1032446E0E600F85B54 /* SlidingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidingViewController.swift; sourceTree = "<group>"; };
+		091DA1052446E0E600F85B54 /* SimpleCustomDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCustomDemoViewController.swift; sourceTree = "<group>"; };
+		091DA1062446E0E600F85B54 /* SimpleCustomTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCustomTabBarViewController.swift; sourceTree = "<group>"; };
+		091DA10B2446E0F200F85B54 /* JDAnimationTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDAnimationTabBarViewController.swift; sourceTree = "<group>"; };
+		093B3A89245BB6E500939188 /* MicNiurenTableViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicNiurenTableViewCell2.swift; sourceTree = "<group>"; };
+		093B3A8B245C650400939188 /* MicChatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicChatTableViewController.swift; sourceTree = "<group>"; };
+		09496AA32444AB3F00B2558E /* MicUserAssest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicUserAssest.swift; sourceTree = "<group>"; };
+		09496AA52444B3AE00B2558E /* MicDemandTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicDemandTableViewCell.swift; sourceTree = "<group>"; };
+		09496AA62444B3AE00B2558E /* MicDemandTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MicDemandTableViewCell.xib; sourceTree = "<group>"; };
+		0953E76D243A06B500554025 /* MicNiurenDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicNiurenDetailViewController.swift; sourceTree = "<group>"; };
+		0953E76F243A136D00554025 /* micro-taskSwift-Briding-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "micro-taskSwift-Briding-Header.h"; sourceTree = "<group>"; };
+		0958636F24384341006017A6 /* MicNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicNavigationViewController.swift; sourceTree = "<group>"; };
+		0958637124387CDD006017A6 /* MicProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicProject.swift; sourceTree = "<group>"; };
+		095863772438D348006017A6 /* MicNiuren.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicNiuren.swift; sourceTree = "<group>"; };
+		095884862460550A00D86E14 /* RadianGridient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RadianGridient.h; sourceTree = "<group>"; };
+		095884872460551100D86E14 /* RadianGridient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadianGridient.m; sourceTree = "<group>"; };
+		095884892460551700D86E14 /* DXRadianLayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXRadianLayerView.h; sourceTree = "<group>"; };
+		0958848A2460551700D86E14 /* DXRadianLayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXRadianLayerView.m; sourceTree = "<group>"; };
+		09722D8B244A9F88009FDAF6 /* MicWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicWebViewController.swift; sourceTree = "<group>"; };
+		099ADFB1245D31510063A6E1 /* MicMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicMeViewController.swift; sourceTree = "<group>"; };
+		099E935C245B0344001C5AAB /* MicMeUserCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicMeUserCard.swift; sourceTree = "<group>"; };
+		09A453A924504C32009559F7 /* TRefreshViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRefreshViewController.swift; sourceTree = "<group>"; };
+		09A8081C24498E590078E909 /* MicMeNavibar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicMeNavibar.swift; sourceTree = "<group>"; };
+		09B1DD2024489BB600FC8441 /* MicBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicBaseViewController.swift; sourceTree = "<group>"; };
+		09B1DD222448BAEE00FC8441 /* MicSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicSearchViewController.swift; sourceTree = "<group>"; };
+		09BCBBFE2445E71900918DAB /* MicDemand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicDemand.swift; sourceTree = "<group>"; };
+		09BCBC00244601E000918DAB /* MicBaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicBaseResponse.swift; sourceTree = "<group>"; };
+		09BCBC02244610C400918DAB /* MicUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicUser.swift; sourceTree = "<group>"; };
+		09CA9EF7243AE10B0094108B /* MicDemandCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicDemandCategory.swift; sourceTree = "<group>"; };
+		09CA9EF9243AE86E0094108B /* MicNiurenTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicNiurenTableViewController.swift; sourceTree = "<group>"; };
+		09CA9F00243B2BFF0094108B /* MicDemandTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicDemandTableViewController.swift; sourceTree = "<group>"; };
+		09D02DE1243F7EC4001BD3EE /* MicLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicLoginViewController.swift; sourceTree = "<group>"; };
+		09D02DE2243F7EC4001BD3EE /* MicLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MicLoginViewController.xib; sourceTree = "<group>"; };
+		09D7497E2442FDC700FEA5FF /* MicPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicPerson.swift; sourceTree = "<group>"; };
+		09D7498024431BB400FEA5FF /* MicAPP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicAPP.swift; sourceTree = "<group>"; };
+		09D749862443453C00FEA5FF /* HMBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMBaseModel.swift; sourceTree = "<group>"; };
+		09EC048924395F06006ADFF2 /* MicChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicChatViewController.swift; sourceTree = "<group>"; };
+		09EC048A24395F06006ADFF2 /* MicChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MicChatViewController.xib; sourceTree = "<group>"; };
+		09EC048D243960D3006ADFF2 /* MicNiurenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicNiurenTableViewCell.swift; sourceTree = "<group>"; };
+		09EC048E243960D3006ADFF2 /* MicNiurenTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MicNiurenTableViewCell.xib; sourceTree = "<group>"; };
+		09F60756244757CF00C960F5 /* MicExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicExtend.swift; sourceTree = "<group>"; };
+		09FB5A9E245842BE005E3C5B /* MicMeHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicMeHeader.swift; sourceTree = "<group>"; };
+		843812BD997D5F621B0F115F /* libPods-micro-task.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-micro-task.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B28245315A308CDF77655AE5 /* Pods-micro-task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-micro-task.release.xcconfig"; path = "Target Support Files/Pods-micro-task/Pods-micro-task.release.xcconfig"; sourceTree = "<group>"; };
+		F7EC79AA42057D3BA22B0630 /* Pods-micro-task.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-micro-task.debug.xcconfig"; path = "Target Support Files/Pods-micro-task/Pods-micro-task.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		090D09372437A167005DFC45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F23132A0FD11B4539BE03A4C /* libPods-micro-task.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0428A94CC42DEF25DCCF921E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				090005E0244DF960009FC8D0 /* Alamofire.framework */,
+				843812BD997D5F621B0F115F /* libPods-micro-task.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		090D09312437A166005DFC45 = {
+			isa = PBXGroup;
+			children = (
+				0953E76F243A136D00554025 /* micro-taskSwift-Briding-Header.h */,
+				095884862460550A00D86E14 /* RadianGridient.h */,
+				095884892460551700D86E14 /* DXRadianLayerView.h */,
+				0958848A2460551700D86E14 /* DXRadianLayerView.m */,
+				095884872460551100D86E14 /* RadianGridient.m */,
+				090D093C2437A167005DFC45 /* micro-task */,
+				090D093B2437A167005DFC45 /* Products */,
+				CE8A485277DECB47A9F7F8A6 /* Pods */,
+				0428A94CC42DEF25DCCF921E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		090D093B2437A167005DFC45 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				090D093A2437A167005DFC45 /* micro_task.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		090D093C2437A167005DFC45 /* micro-task */ = {
+			isa = PBXGroup;
+			children = (
+				090D094B2437A168005DFC45 /* Info.plist */,
+				090D09482437A168005DFC45 /* LaunchScreen.storyboard */,
+				090D09462437A168005DFC45 /* Assets.xcassets */,
+				091DA0992446DF4900F85B54 /* test */,
+				0958637A2438DA81006017A6 /* other */,
+				09167400243AD50C00181C41 /* Main(主页) */,
+				0958636B243832DB006017A6 /* Chat(聊天) */,
+				09167401243AD52D00181C41 /* Niuren(牛人) */,
+				0958636A243832C4006017A6 /* Me(我的) */,
+				095863792438D9FE006017A6 /* model */,
+				0958636E243836BD006017A6 /* common */,
+			);
+			path = "micro-task";
+			sourceTree = "<group>";
+		};
+		09167400243AD50C00181C41 /* Main(主页) */ = {
+			isa = PBXGroup;
+			children = (
+				09F60755244752C800C960F5 /* MicHomeView */,
+				09496AA92444C12B00B2558E /* MicDemandTableView */,
+				09F60754244751D500C960F5 /* MicDemandDetailView */,
+				09B1DD242448BAF900FC8441 /* MicSearchView */,
+			);
+			path = "Main(主页)";
+			sourceTree = "<group>";
+		};
+		09167401243AD52D00181C41 /* Niuren(牛人) */ = {
+			isa = PBXGroup;
+			children = (
+				09CA9EFD243B232F0094108B /* View */,
+				0916740B243AD6A200181C41 /* Model */,
+				0916740C243AD6B000181C41 /* Controller */,
+			);
+			path = "Niuren(牛人)";
+			sourceTree = "<group>";
+		};
+		0916740B243AD6A200181C41 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0916740C243AD6B000181C41 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				09CA9EFB243B14E50094108B /* MicNiurenTableViewCell */,
+				09CA9EFC243B15020094108B /* MicNiurenTableViewController */,
+				0953E76D243A06B500554025 /* MicNiurenDetailViewController.swift */,
+				09167402243AD55300181C41 /* MicNiurenViewController.swift */,
+				093B3A89245BB6E500939188 /* MicNiurenTableViewCell2.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		091DA0992446DF4900F85B54 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				09A453A824504C15009559F7 /* TRefresh */,
+				091DA10A2446E0F200F85B54 /* JDAnimationTabBar */,
+				091DA1042446E0E600F85B54 /* SimpleCustomTabBar */,
+				091DA1022446E0E600F85B54 /* SlidingTabBar */,
+				091DA0FD2446E0DD00F85B54 /* TaoBaoCustomTabBar */,
+				091DA0FA2446E0D400F85B54 /* UITabBar+Badge */,
+				091DA0E52446E06400F85B54 /* DemoVC */,
+				091DA0E02446E05B00F85B54 /* CustomTabBar */,
+				091DA0DD2446E04F00F85B54 /* AnimationTabBar */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
+		091DA0DD2446E04F00F85B54 /* AnimationTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				091DA0DE2446E04F00F85B54 /* AnimationTabBarViewController.swift */,
+			);
+			path = AnimationTabBar;
+			sourceTree = "<group>";
+		};
+		091DA0E02446E05B00F85B54 /* CustomTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				091DA0E12446E05B00F85B54 /* CustomTabBar.swift */,
+				091DA0E22446E05B00F85B54 /* CustomTabBarViewController.swift */,
+			);
+			path = CustomTabBar;
+			sourceTree = "<group>";
+		};
+		091DA0E52446E06400F85B54 /* DemoVC */ = {
+			isa = PBXGroup;
+			children = (
+				091DA0E62446E06400F85B54 /* SuperViewController.swift */,
+				091DA0E72446E06400F85B54 /* Demo8ViewController.swift */,
+				091DA0E82446E06400F85B54 /* Demo7ViewController.swift */,
+				091DA0E92446E06400F85B54 /* Demo6ViewController.swift */,
+				091DA0EA2446E06400F85B54 /* Demo5ViewController.swift */,
+				091DA0EB2446E06400F85B54 /* Demo4ViewController.swift */,
+				091DA0EC2446E06400F85B54 /* BadgeViewController.swift */,
+				091DA0ED2446E06400F85B54 /* Demo2ViewController.swift */,
+				091DA0EE2446E06400F85B54 /* Demo3ViewController.swift */,
+				091DA0EF2446E06400F85B54 /* Demo1ViewController.swift */,
+			);
+			path = DemoVC;
+			sourceTree = "<group>";
+		};
+		091DA0FA2446E0D400F85B54 /* UITabBar+Badge */ = {
+			isa = PBXGroup;
+			children = (
+				091DA0FB2446E0D400F85B54 /* UITabBar+HahnBadge.swift */,
+			);
+			path = "UITabBar+Badge";
+			sourceTree = "<group>";
+		};
+		091DA0FD2446E0DD00F85B54 /* TaoBaoCustomTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				091DA0FE2446E0DD00F85B54 /* TaoBaoCustomTabBarViewController.swift */,
+				091DA0FF2446E0DD00F85B54 /* TaoBaoCustomTabBar.swift */,
+			);
+			path = TaoBaoCustomTabBar;
+			sourceTree = "<group>";
+		};
+		091DA1022446E0E600F85B54 /* SlidingTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				091DA1032446E0E600F85B54 /* SlidingViewController.swift */,
+			);
+			path = SlidingTabBar;
+			sourceTree = "<group>";
+		};
+		091DA1042446E0E600F85B54 /* SimpleCustomTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				091DA1052446E0E600F85B54 /* SimpleCustomDemoViewController.swift */,
+				091DA1062446E0E600F85B54 /* SimpleCustomTabBarViewController.swift */,
+			);
+			path = SimpleCustomTabBar;
+			sourceTree = "<group>";
+		};
+		091DA10A2446E0F200F85B54 /* JDAnimationTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				091DA10B2446E0F200F85B54 /* JDAnimationTabBarViewController.swift */,
+			);
+			path = JDAnimationTabBar;
+			sourceTree = "<group>";
+		};
+		09496AA92444C12B00B2558E /* MicDemandTableView */ = {
+			isa = PBXGroup;
+			children = (
+				09CA9F00243B2BFF0094108B /* MicDemandTableViewController.swift */,
+				09496AA52444B3AE00B2558E /* MicDemandTableViewCell.swift */,
+				09496AA62444B3AE00B2558E /* MicDemandTableViewCell.xib */,
+			);
+			path = MicDemandTableView;
+			sourceTree = "<group>";
+		};
+		0958636A243832C4006017A6 /* Me(我的) */ = {
+			isa = PBXGroup;
+			children = (
+				09FB5A9D2457B901005E3C5B /* view */,
+				099ADFAF245D30DF0063A6E1 /* MicMeViewController */,
+				099ADFB0245D30F40063A6E1 /* MicLoginViewController */,
+			);
+			path = "Me(我的)";
+			sourceTree = "<group>";
+		};
+		0958636B243832DB006017A6 /* Chat(聊天) */ = {
+			isa = PBXGroup;
+			children = (
+				09EC048924395F06006ADFF2 /* MicChatViewController.swift */,
+				09EC048A24395F06006ADFF2 /* MicChatViewController.xib */,
+				093B3A8B245C650400939188 /* MicChatTableViewController.swift */,
+			);
+			path = "Chat(聊天)";
+			sourceTree = "<group>";
+		};
+		0958636E243836BD006017A6 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				090D09652437A34F005DFC45 /* MicTabbarViewController.swift */,
+				0958636F24384341006017A6 /* MicNavigationViewController.swift */,
+				09B1DD2024489BB600FC8441 /* MicBaseViewController.swift */,
+				09722D8B244A9F88009FDAF6 /* MicWebViewController.swift */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		095863792438D9FE006017A6 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				09D7497E2442FDC700FEA5FF /* MicPerson.swift */,
+				09496AA32444AB3F00B2558E /* MicUserAssest.swift */,
+				09CA9EF7243AE10B0094108B /* MicDemandCategory.swift */,
+				09BCBC00244601E000918DAB /* MicBaseResponse.swift */,
+				095863772438D348006017A6 /* MicNiuren.swift */,
+				0958637124387CDD006017A6 /* MicProject.swift */,
+				09BCBBFE2445E71900918DAB /* MicDemand.swift */,
+				09BCBC02244610C400918DAB /* MicUser.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		0958637A2438DA81006017A6 /* other */ = {
+			isa = PBXGroup;
+			children = (
+				09D749862443453C00FEA5FF /* HMBaseModel.swift */,
+				09D7498024431BB400FEA5FF /* MicAPP.swift */,
+				090D093D2437A167005DFC45 /* AppDelegate.swift */,
+				090D09412437A167005DFC45 /* ViewController.swift */,
+				09F60756244757CF00C960F5 /* MicExtend.swift */,
+			);
+			path = other;
+			sourceTree = "<group>";
+		};
+		099ADFAF245D30DF0063A6E1 /* MicMeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				099ADFB1245D31510063A6E1 /* MicMeViewController.swift */,
+			);
+			path = MicMeViewController;
+			sourceTree = "<group>";
+		};
+		099ADFB0245D30F40063A6E1 /* MicLoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				09D02DE1243F7EC4001BD3EE /* MicLoginViewController.swift */,
+				09D02DE2243F7EC4001BD3EE /* MicLoginViewController.xib */,
+			);
+			path = MicLoginViewController;
+			sourceTree = "<group>";
+		};
+		09A453A824504C15009559F7 /* TRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				09A453A924504C32009559F7 /* TRefreshViewController.swift */,
+			);
+			path = TRefresh;
+			sourceTree = "<group>";
+		};
+		09B1DD242448BAF900FC8441 /* MicSearchView */ = {
+			isa = PBXGroup;
+			children = (
+				09B1DD222448BAEE00FC8441 /* MicSearchViewController.swift */,
+			);
+			path = MicSearchView;
+			sourceTree = "<group>";
+		};
+		09CA9EFB243B14E50094108B /* MicNiurenTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				09EC048D243960D3006ADFF2 /* MicNiurenTableViewCell.swift */,
+				09EC048E243960D3006ADFF2 /* MicNiurenTableViewCell.xib */,
+			);
+			path = MicNiurenTableViewCell;
+			sourceTree = "<group>";
+		};
+		09CA9EFC243B15020094108B /* MicNiurenTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				09CA9EF9243AE86E0094108B /* MicNiurenTableViewController.swift */,
+			);
+			path = MicNiurenTableViewController;
+			sourceTree = "<group>";
+		};
+		09CA9EFD243B232F0094108B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		09F60754244751D500C960F5 /* MicDemandDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				091DA0772446AF4800F85B54 /* MicDemandDetailViewController.swift */,
+			);
+			path = MicDemandDetailView;
+			sourceTree = "<group>";
+		};
+		09F60755244752C800C960F5 /* MicHomeView */ = {
+			isa = PBXGroup;
+			children = (
+				09167409243AD60600181C41 /* MicHomeViewController.swift */,
+			);
+			path = MicHomeView;
+			sourceTree = "<group>";
+		};
+		09FB5A9D2457B901005E3C5B /* view */ = {
+			isa = PBXGroup;
+			children = (
+				09A8081C24498E590078E909 /* MicMeNavibar.swift */,
+				09FB5A9E245842BE005E3C5B /* MicMeHeader.swift */,
+				099E935C245B0344001C5AAB /* MicMeUserCard.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		CE8A485277DECB47A9F7F8A6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F7EC79AA42057D3BA22B0630 /* Pods-micro-task.debug.xcconfig */,
+				B28245315A308CDF77655AE5 /* Pods-micro-task.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		090D09392437A167005DFC45 /* micro-task */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 090D094E2437A168005DFC45 /* Build configuration list for PBXNativeTarget "micro-task" */;
+			buildPhases = (
+				136CC787FA45EF0AB582A9E4 /* [CP] Check Pods Manifest.lock */,
+				090D09362437A167005DFC45 /* Sources */,
+				090D09372437A167005DFC45 /* Frameworks */,
+				090D09382437A167005DFC45 /* Resources */,
+				605A930EAC753956F6A09816 /* [CP] Copy Pods Resources */,
+				422EE67FDF129E982DF5F5FB /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "micro-task";
+			productName = "micro-task";
+			productReference = 090D093A2437A167005DFC45 /* micro_task.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		090D09322437A166005DFC45 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Mic;
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = airtim;
+				TargetAttributes = {
+					090D09392437A167005DFC45 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 090D09352437A166005DFC45 /* Build configuration list for PBXProject "micro-task" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 090D09312437A166005DFC45;
+			productRefGroup = 090D093B2437A167005DFC45 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				090D09392437A167005DFC45 /* micro-task */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		090D09382437A167005DFC45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09496AA82444B3AE00B2558E /* MicDemandTableViewCell.xib in Resources */,
+				090D094A2437A168005DFC45 /* LaunchScreen.storyboard in Resources */,
+				09EC0490243960D3006ADFF2 /* MicNiurenTableViewCell.xib in Resources */,
+				09EC048C24395F06006ADFF2 /* MicChatViewController.xib in Resources */,
+				09D02DE4243F7EC4001BD3EE /* MicLoginViewController.xib in Resources */,
+				090D09472437A168005DFC45 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		136CC787FA45EF0AB582A9E4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-micro-task-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		422EE67FDF129E982DF5F5FB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-micro-task/Pods-micro-task-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-micro-task/Pods-micro-task-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-micro-task/Pods-micro-task-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		605A930EAC753956F6A09816 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-micro-task/Pods-micro-task-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-micro-task/Pods-micro-task-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-micro-task/Pods-micro-task-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		090D09362437A167005DFC45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09BCBC03244610C400918DAB /* MicUser.swift in Sources */,
+				091DA0F92446E06400F85B54 /* Demo1ViewController.swift in Sources */,
+				0958637224387CDD006017A6 /* MicProject.swift in Sources */,
+				09A8081D24498E590078E909 /* MicMeNavibar.swift in Sources */,
+				09F60757244757CF00C960F5 /* MicExtend.swift in Sources */,
+				090D09662437A34F005DFC45 /* MicTabbarViewController.swift in Sources */,
+				0958637024384341006017A6 /* MicNavigationViewController.swift in Sources */,
+				09D7497F2442FDC700FEA5FF /* MicPerson.swift in Sources */,
+				091DA1012446E0DD00F85B54 /* TaoBaoCustomTabBar.swift in Sources */,
+				09B1DD232448BAEE00FC8441 /* MicSearchViewController.swift in Sources */,
+				09B1DD2124489BB600FC8441 /* MicBaseViewController.swift in Sources */,
+				091DA1002446E0DD00F85B54 /* TaoBaoCustomTabBarViewController.swift in Sources */,
+				09D02DE3243F7EC4001BD3EE /* MicLoginViewController.swift in Sources */,
+				093B3A8C245C650400939188 /* MicChatTableViewController.swift in Sources */,
+				09EC048F243960D3006ADFF2 /* MicNiurenTableViewCell.swift in Sources */,
+				091DA0F52446E06400F85B54 /* Demo4ViewController.swift in Sources */,
+				095884882460551100D86E14 /* RadianGridient.m in Sources */,
+				091DA0782446AF4800F85B54 /* MicDemandDetailViewController.swift in Sources */,
+				09A453AA24504C32009559F7 /* TRefreshViewController.swift in Sources */,
+				091DA0F82446E06400F85B54 /* Demo3ViewController.swift in Sources */,
+				099ADFB2245D31510063A6E1 /* MicMeViewController.swift in Sources */,
+				093B3A8A245BB6E500939188 /* MicNiurenTableViewCell2.swift in Sources */,
+				099E935D245B0344001C5AAB /* MicMeUserCard.swift in Sources */,
+				09CA9F01243B2BFF0094108B /* MicDemandTableViewController.swift in Sources */,
+				091DA1072446E0E600F85B54 /* SlidingViewController.swift in Sources */,
+				09496AA42444AB3F00B2558E /* MicUserAssest.swift in Sources */,
+				091DA1092446E0E600F85B54 /* SimpleCustomTabBarViewController.swift in Sources */,
+				09CA9EFA243AE86E0094108B /* MicNiurenTableViewController.swift in Sources */,
+				090D09422437A167005DFC45 /* ViewController.swift in Sources */,
+				0953E76E243A06B500554025 /* MicNiurenDetailViewController.swift in Sources */,
+				09167403243AD55300181C41 /* MicNiurenViewController.swift in Sources */,
+				091DA1082446E0E600F85B54 /* SimpleCustomDemoViewController.swift in Sources */,
+				091DA0F12446E06400F85B54 /* Demo8ViewController.swift in Sources */,
+				091DA0F22446E06400F85B54 /* Demo7ViewController.swift in Sources */,
+				09FB5A9F245842BE005E3C5B /* MicMeHeader.swift in Sources */,
+				0958848B2460551700D86E14 /* DXRadianLayerView.m in Sources */,
+				09D7498124431BB400FEA5FF /* MicAPP.swift in Sources */,
+				09CA9EF8243AE10B0094108B /* MicDemandCategory.swift in Sources */,
+				09BCBC01244601E000918DAB /* MicBaseResponse.swift in Sources */,
+				091DA0F32446E06400F85B54 /* Demo6ViewController.swift in Sources */,
+				09EC048B24395F06006ADFF2 /* MicChatViewController.swift in Sources */,
+				091DA10C2446E0F200F85B54 /* JDAnimationTabBarViewController.swift in Sources */,
+				09D749872443453C00FEA5FF /* HMBaseModel.swift in Sources */,
+				09496AA72444B3AE00B2558E /* MicDemandTableViewCell.swift in Sources */,
+				090D093E2437A167005DFC45 /* AppDelegate.swift in Sources */,
+				09BCBBFF2445E71900918DAB /* MicDemand.swift in Sources */,
+				09722D8C244A9F88009FDAF6 /* MicWebViewController.swift in Sources */,
+				091DA0DF2446E04F00F85B54 /* AnimationTabBarViewController.swift in Sources */,
+				091DA0FC2446E0D400F85B54 /* UITabBar+HahnBadge.swift in Sources */,
+				091DA0F02446E06400F85B54 /* SuperViewController.swift in Sources */,
+				091DA0F42446E06400F85B54 /* Demo5ViewController.swift in Sources */,
+				091DA0F72446E06400F85B54 /* Demo2ViewController.swift in Sources */,
+				091DA0F62446E06400F85B54 /* BadgeViewController.swift in Sources */,
+				091DA0E42446E05B00F85B54 /* CustomTabBarViewController.swift in Sources */,
+				095863782438D348006017A6 /* MicNiuren.swift in Sources */,
+				0916740A243AD60600181C41 /* MicHomeViewController.swift in Sources */,
+				091DA0E32446E05B00F85B54 /* CustomTabBar.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		090D09482437A168005DFC45 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				090D09492437A168005DFC45 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		090D094C2437A168005DFC45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		090D094D2437A168005DFC45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		090D094F2437A168005DFC45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7EC79AA42057D3BA22B0630 /* Pods-micro-task.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8FCKF5WQUJ;
+				INFOPLIST_FILE = "micro-task/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.airtim.contact;
+				PRODUCT_NAME = micro_task;
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/micro-taskSwift-Briding-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
+			};
+			name = Debug;
+		};
+		090D09502437A168005DFC45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B28245315A308CDF77655AE5 /* Pods-micro-task.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8FCKF5WQUJ;
+				INFOPLIST_FILE = "micro-task/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.airtim.contact;
+				PRODUCT_NAME = micro_task;
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/micro-taskSwift-Briding-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		090D09352437A166005DFC45 /* Build configuration list for PBXProject "micro-task" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				090D094C2437A168005DFC45 /* Debug */,
+				090D094D2437A168005DFC45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		090D094E2437A168005DFC45 /* Build configuration list for PBXNativeTarget "micro-task" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				090D094F2437A168005DFC45 /* Debug */,
+				090D09502437A168005DFC45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 090D09322437A166005DFC45 /* Project object */;
+}

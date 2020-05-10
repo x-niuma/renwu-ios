@@ -1,0 +1,6 @@
+module Pods_micro_task {
+  umbrella header "Pods-micro-task-umbrella.h"
+
+  export *
+  module * { export * }
+}

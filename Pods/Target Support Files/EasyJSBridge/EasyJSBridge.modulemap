@@ -1,0 +1,6 @@
+module EasyJSBridge {
+  umbrella header "EasyJSBridge-umbrella.h"
+
+  export *
+  module * { export * }
+}
