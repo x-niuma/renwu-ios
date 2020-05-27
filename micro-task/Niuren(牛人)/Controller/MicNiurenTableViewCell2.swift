@@ -52,6 +52,18 @@ class MicNiurenTableViewCell2: UITableViewCell {
         return btn
     }()
     
+    lazy var TLine: UIView = {
+       let v = UIView()
+        v.backgroundColor = UIColor.hex("#f5f5f5f")
+        return v
+    }()
+    
+    lazy var BLine: UIView = {
+       let v = UIView()
+        v.backgroundColor = .red
+        return v
+    }()
+    
     lazy var avatarView: UIButton = {
         let btn = UIButton()
         btn.setTitleColor(UIColor.hex("#a8a8a8"), for: .normal)
@@ -100,16 +112,17 @@ class MicNiurenTableViewCell2: UITableViewCell {
     }
     
     override func layoutSubviews () {
+        super.layoutSubviews()
         var frame = contentView.frame
-        frame.origin.y += 10
         frame.origin.x += 10
-        frame.size.height -= 10
-        frame.size.width -= 10 * 2
+        frame.size.width -= 20
         contentView.frame = frame
         self.backgroundColor = lineColor
     }
     
     private func makeInitSubviews() {
+//        contentView
+        contentView.addSubview(TLine)
         contentView.addSubview(sort)
         contentView.addSubview(mainView)
 //        contentView.addSubview(avatarView)
@@ -119,17 +132,24 @@ class MicNiurenTableViewCell2: UITableViewCell {
         mainView.addSubview(words)
         mainView.addSubview(chatBtn)
         mainView.addSubview(rcoinNum)
+        contentView.addSubview(BLine)
     }
     
     private func makeInitLayout () {
-        sort.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(0)
-            make.width.height.equalTo(20)
+        TLine.snp.makeConstraints { (make) in
+            make.left.right.equalToSuperview()
             make.top.equalToSuperview()
+            make.height.equalTo(10)
+        }
+        sort.snp.makeConstraints { (make) in
+            make.left.equalToSuperview()
+            make.width.height.equalTo(20)
+            make.top.equalToSuperview().offset(10)
         }
         mainView.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(30)
-            make.bottom.right.top.equalToSuperview()
+            make.bottom.right.equalToSuperview()
+            make.top.equalToSuperview().offset(10)
         }
         avatarView.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(10)
@@ -146,8 +166,9 @@ class MicNiurenTableViewCell2: UITableViewCell {
             make.top.equalTo(nickname.snp.bottom).offset(12)
         }
         rcoinNum.snp.makeConstraints { (make) in
-            make.leading.equalTo(nickname)
-            make.top.equalTo(words.snp.bottom).offset(8)
+            make.leading.equalTo(words)
+            make.top.equalTo(words.snp.bottom).offset(10)
+//            make.height.greaterThanOrEqualTo(12)
             make.bottom.equalToSuperview().offset(-12)
         }
         chatBtn.snp.makeConstraints { (make) in
