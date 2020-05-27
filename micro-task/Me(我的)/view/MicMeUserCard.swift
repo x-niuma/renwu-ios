@@ -18,7 +18,12 @@ class MicMeUserCard: UIView {
     var userInfo: MicPerson? = nil
     var assetInfo: MicUserAssestData? = nil
     var vc: MicMeViewController!
-    let menuTitle: [String] = ["关注", "收藏", "点赞", "积分"];
+    let menuTitle = [
+        ["title": "关注", "needLogin": true, "value": 0],
+        ["title": "收藏", "needLogin": true, "value": 0],
+        ["title": "点赞", "needLogin": true, "value": 0],
+        ["title": "积分", "needLogin": true, "value": 0],
+    ]
     var navColor: UIColor!
     let userAvatarW = 60
     var bgColor: UIColor!
@@ -68,6 +73,7 @@ class MicMeUserCard: UIView {
     lazy var tableNav: MicMeHeader = {
         let header = MicMeHeader.init(frame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: kNavBarAndStatusBarHeight))
         header.backgroundColor = navColor
+        header.vc = self.vc
         return header
     }()
     
@@ -88,14 +94,13 @@ class MicMeUserCard: UIView {
         btn.setTitle("登录/注册", for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         btn.setTitleColor(UIColor.hex("#8a8a8a"), for: .normal)
-        btn.backgroundColor = UIColor.red
         btn.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         return btn
     }()
     
     lazy var menu: [UIButton] = {
         var menu = [UIButton]()
-        let icons: [String] = ["guanzhu", "shoucang", "zan2", "jifen"]
+//        let icons: [String] = ["guanzhu", "shoucang", "zan2", "jifen"]
         var values: [Int] = [0, 0, 0, 0, 0]
         
         if let _assetInfo = self.assetInfo {
@@ -117,7 +122,7 @@ class MicMeUserCard: UIView {
             let label = UILabel()
             label.font = UIFont.systemFont(ofSize: 12)
             label.textColor = UIColor.hex("#8a8a8a")
-            label.text = menuTitle[index]
+            label.text = menuTitle[index]["title"]! as! String
             
             btn.addSubview(value)
             btn.addSubview(label)
@@ -145,10 +150,27 @@ class MicMeUserCard: UIView {
         return mainMenu
     }()
     
+    @objc func setContext(vc: MicMeViewController) {
+        self.vc = vc
+        self.tableNav.vc = vc
+    }
     
     @objc func handleClickMenu(sender: UIButton) {
         for (index, btn) in menu.enumerated() {
             if (sender == btn) {
+                if (menuTitle[index]["needLogin"]! as! Bool && !self.vc.isLogined) {
+                    let loginView = MicLoginViewController();
+                    loginView.loginCb = {(userInfo: MicPerson) in
+                        self.getUserInfo()
+                        if (index == 0) {micro_task.gotoMyFollow(currentVC: self.vc)}
+                        if (index == 1) {micro_task.gotoMyCollect(currentVC: self.vc)}
+                        if (index == 2) {micro_task.gotoMyLike(currentVC: self.vc)}
+                        if (index == 3) {micro_task.getoMyPoint(currentVC: self.vc)}
+                    }
+                    self.vc.present(loginView, animated: true){}
+                    return
+                }
+                
                 if (index == 0) {micro_task.gotoMyFollow(currentVC: vc)}
                 if (index == 1) {micro_task.gotoMyCollect(currentVC: vc)}
                 if (index == 2) {micro_task.gotoMyLike(currentVC: vc)}
@@ -180,7 +202,6 @@ class MicMeUserCard: UIView {
     
     @objc func handleLogin() {
         micro_task.login(currentVC: vc) { (userInfo) in
-            print("登录成功", userInfo)
             self.getUserInfo!()
         }
     }
@@ -278,6 +299,34 @@ class MicMeUserCard: UIView {
         }
     }
     
+    func resetMenu() {
+        let values: [Int] = [0, 0, 0, 0, 0]
+        self.assetInfo = nil
+        for (index, btn) in menu.enumerated() {
+            let label = btn.subviews[0] as! UILabel
+            label.text = "\(values[index])"
+        }
+    }
+    
+    // 清除登录状态
+    func clearLoginState() {
+        // 资产信息
+        self.assetInfo = nil
+        let values: [Int] = [0, 0, 0, 0, 0]
+        for (index, btn) in menu.enumerated() {
+            let label = btn.subviews[0] as! UILabel
+            label.text = "\(values[index])"
+        }
+        
+        // 头像信息
+        self.userInfo = nil
+        nickname.isHidden = true
+        mobile.isHidden = true
+        checkin.isHidden = true
+        loginBtn.isHidden = false
+        self.userAvatar.kf.setImage(with: URL(string: kDefaultAvatar))
+    }
+
     func updateUserInfo(userInfo: MicPerson) {
         nickname.isHidden = false
         mobile.isHidden = false
@@ -297,7 +346,7 @@ class MicMeUserCard: UIView {
             self.mobile.text = _mobile
         }
     }
-        
+    
     // 获取签到状态
     func getCheckinState() {
         class Data: HandyJSON {
@@ -307,11 +356,13 @@ class MicMeUserCard: UIView {
         AF.request(micro_task.appendToken(url: getCheckinStateUrl)).responseString { response in
             if let _value = response.value {
                 if let _res = MicBaseResponse<Data>.deserialize(from: _value) {
-                    self.checkinState = (_res.data?.status)!
-                    if (self.checkinState == 0) {
-                        self.checkin.setTitle("立即签到", for: .normal)
-                    } else {
-                        self.checkin.setTitle("已签到", for: .normal)
+                    if (_res.errCode == "0") {
+                        self.checkinState = (_res.data?.status)!
+                        if (self.checkinState == 0) {
+                            self.checkin.setTitle("立即签到", for: .normal)
+                        } else {
+                            self.checkin.setTitle("已签到", for: .normal)
+                        }
                     }
                 }
             }

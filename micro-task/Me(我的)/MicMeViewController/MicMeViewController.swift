@@ -9,23 +9,29 @@
 import UIKit
 import SnapKit
 import Alamofire
+import HandyJSON
 
 let rote = CGFloat(375.0 / 169.0)
 let bgHeight = kScreenWidth / rote
 
 class MicMeViewController: UIViewController {
-    
-
-    let titles = ["我的接单","我的需求","发布需求","账户设置","立即登录"] // 主菜单
+    let menu1 = [
+        ["title": "我的接单", "needLogin": true],
+        ["title": "我的需求", "needLogin": true],
+        ["title": "发布需求", "needLogin": true],
+        ["title": "账户设置", "needLogin": true],
+        ["title": "关于我们", "needLogin": false],
+        ["title": "设置", "needLogin": true]
+    ];
     var userInfo: MicPerson? = nil // 用户信息
     var assetInfo: MicUserAssestData? = nil // 资产信息
-    var customNavi : MicMeNavibar!
     let headerViewH = 170 + 20 + kNavBarAndStatusBarHeight
     var menu2Btns = [UIButton]()
     var loginBtn = UIButton()
     var cellHeight = 50
     var bgColor = UIColor.hex("#615963")
     var navColor = UIColor.hex("#615963")
+    var isLogined: Bool = false // 是否登录(维护登录状态)
     
     // 获取用户信息
     @objc func getUserInfo() {
@@ -43,11 +49,19 @@ class MicMeViewController: UIViewController {
             headerView.updateUserInfo(userInfo: self.userInfo!)
             if (self.userInfo?.token) != nil {
                 self.getAccountInfo()
+            } else {
+                headerView.clearLoginState()
             }
+        } else {
+            clearLoginState()
         }
     }
     
-    // 获取牛人榜
+    func clearLoginState() {
+        self.headerView.clearLoginState()
+    }
+    
+    // 获取账户信息
     func getAccountInfo() {
         let url = getUserAssetsUrl + "?token=\((self.userInfo?.token)!)"
         AF.request(url).responseJSON { response in
@@ -57,9 +71,16 @@ class MicMeViewController: UIViewController {
                     let model = try decoder.decode(MicUserAssestRes.self, from: resData)
                     if model.retCode == "0" {
                         if let data = model.data {
+                            self.isLogined = true
                             self.assetInfo = data
                             self.headerView.updateMenu(assetInfo: self.assetInfo!)
+                        } else {
+                            self.isLogined = false
+                            self.headerView.clearLoginState()
                         }
+                    } else {
+                        self.isLogined = false
+                        self.headerView.clearLoginState()
                     }
                 }
                 catch {
@@ -72,10 +93,22 @@ class MicMeViewController: UIViewController {
     lazy var headerView: MicMeUserCard = {
         let frame = CGRect.init(x: 0, y: 0, width: Int(kScreenWidth), height: Int(headerViewH))
         let view = MicMeUserCard.init(frame: frame)
-        view.vc = self
+        view.setContext(vc: self)
         view.navColor = navColor
         view.getUserInfo = getUserInfo
         return view
+    }()
+    
+    lazy var fixedHeader: MicMeHeader = {
+        let frame = CGRect.init(x: 0, y: 0, width: kScreenWidth, height: kNavBarAndStatusBarHeight)
+        let v = MicMeHeader.init(frame: frame)
+        v.vc = self
+        v.backgroundColor = UIColor.white
+        v.titleLabel.text = "我的"
+        v.saomaBtn.tintColor = UIColor.hex("#888888")
+        v.settingBtn.tintColor = UIColor.hex("#888888")
+        v.alpha = 0
+        return v
     }()
     
     lazy var tableView: UITableView = {
@@ -90,7 +123,7 @@ class MicMeViewController: UIViewController {
     }()
     
     lazy var footerView: UIView = {
-        let footerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: Int(Screen_Width), height: self.titles.count * cellHeight + 24))
+        let footerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: Int(kScreenWidth), height: self.menu1.count * cellHeight + 24))
         footerView.backgroundColor = UIColor.hex("#f5f5f5")
         return footerView
     }()
@@ -99,16 +132,6 @@ class MicMeViewController: UIViewController {
         let view = UIView()
         view.backgroundColor = navColor
         return view
-    }()
-    
-    lazy var fixedHeader: MicMeHeader = {
-        let header = MicMeHeader.init(frame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: kNavBarAndStatusBarHeight))
-        header.backgroundColor = UIColor.white
-        header.titleLabel.text = "我的"
-        header.saomaBtn.tintColor = UIColor.hex("#888888")
-        header.settingBtn.tintColor = UIColor.hex("#888888")
-        header.alpha = 0
-        return header
     }()
     
     private func makeInitLayout() {
@@ -136,7 +159,7 @@ class MicMeViewController: UIViewController {
     }
     
     func addFooterMenu() {
-        for (index, value) in titles.enumerated() {
+        for (index, value) in menu1.enumerated() {
             let item = UIButton()
             footerMenu.addSubview(item)
             item.addTarget(self, action: #selector(handleClickMenu(sender:)), for: .touchUpInside)
@@ -158,7 +181,7 @@ class MicMeViewController: UIViewController {
             
             let name = UILabel()
             item.addSubview(name)
-            name.text = value
+            name.text = value["title"] as? String
             name.textColor = UIColor.hex("#8a8a8a")
             name.font = UIFont.systemFont(ofSize: 16)
             name.snp.makeConstraints { (make) in
@@ -166,7 +189,7 @@ class MicMeViewController: UIViewController {
                 make.centerY.equalToSuperview()
             }
             
-            if ((index + 1) != titles.count) {
+            if ((index + 1) != menu1.count) {
                 let line = UIView()
                 item.addSubview(line)
                 line.backgroundColor = UIColor.hex("#f5f5f5")
@@ -211,26 +234,36 @@ class MicMeViewController: UIViewController {
         footerMenu.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(16)
             make.right.equalToSuperview().offset(-16)
-            make.height.equalTo(self.titles.count * cellHeight)
+            make.height.equalTo(self.menu1.count * cellHeight)
             make.top.equalToSuperview().offset(12)
         }
         addFooterMenu()
     }
-        
+    
     @objc func handleClickMenu(sender: UIButton) {
         for (index, btn) in footerMenu.subviews.enumerated() {
             if (btn === sender) {
-                if (index == 4) {
+                if (menu1[index]["needLogin"]! as! Bool && !self.isLogined) {
                     let loginView = MicLoginViewController();
                     loginView.loginCb = {(userInfo: MicPerson) in
                         self.getUserInfo()
+                        if (index == 3) {micro_task.gotoUserInfo(currentVC: self)}
+                        if (index == 2) {micro_task.gotoCreateDemand(currentVC: self)}
+                        if (index == 1) {micro_task.gotoMyDemand(currentVC: self)}
+                        if (index == 0) {micro_task.gotoMyEnroll(currentVC: self)}
+                    if (index == 4) {micro_task.gotoAboutUs(currentVC: self)}
+                               if (index == 5) {micro_task.gotoSetting(currentVC: self)}
                     }
                     self.present(loginView, animated: true){}
+                    return
                 }
+                
                 if (index == 3) {micro_task.gotoUserInfo(currentVC: self)}
                 if (index == 2) {micro_task.gotoCreateDemand(currentVC: self)}
                 if (index == 1) {micro_task.gotoMyDemand(currentVC: self)}
                 if (index == 0) {micro_task.gotoMyEnroll(currentVC: self)}
+                if (index == 4) {micro_task.gotoAboutUs(currentVC: self)}
+                if (index == 5) {micro_task.gotoSetting(currentVC: self)}
             }
         }
     }
@@ -273,10 +306,10 @@ extension MicMeViewController: UITableViewDataSource, UITableViewDelegate {
             cell = UITableViewCell.init(style: .value1, reuseIdentifier: cellID);
         }
         cell.accessoryType = .disclosureIndicator
-        cell.textLabel?.text =  self.titles[indexPath.row]
+        cell.textLabel?.text =  self.menu1[indexPath.row]["title"] as? String
         cell.selectionStyle = .none
         
-        if (indexPath.row == (self.titles.count - 1)) {
+        if (indexPath.row == (self.menu1.count - 1)) {
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: cell.bounds.size.width + 16);
         }
         return cell

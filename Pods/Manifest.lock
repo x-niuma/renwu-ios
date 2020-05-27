@@ -14,6 +14,7 @@ PODS:
   - SDWebImage/Core (5.5.2)
   - SnapKit (5.0.1)
   - Toast (4.0.0)
+  - Toast-Swift (5.0.1)
   - TXIMSDK_iOS (4.7.1)
   - TXIMSDK_TUIKit_iOS (4.6.100):
     - ISVImageScrollView (= 0.1.2)
@@ -33,6 +34,7 @@ DEPENDENCIES:
   - Kingfisher
   - MJRefresh
   - SnapKit
+  - Toast-Swift (~> 5.0.1)
   - TXIMSDK_TUIKit_iOS
   - VTMagic
 
@@ -49,6 +51,7 @@ SPEC REPOS:
     - SDWebImage
     - SnapKit
     - Toast
+    - Toast-Swift
     - TXIMSDK_iOS
     - TXIMSDK_TUIKit_iOS
     - VTMagic
@@ -65,10 +68,11 @@ SPEC CHECKSUMS:
   SDWebImage: 4d5c027c935438f341ed33dbac53ff9f479922ca
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
   TXIMSDK_iOS: 2506b27cfdf2aea3e4433b67870755d3a14b358c
   TXIMSDK_TUIKit_iOS: 7c5a6556929b590e3d2cfb85a865a3c5b28f4d87
   VTMagic: b49e5f456dbcbfd9a3588ba92417233a105bc193
 
-PODFILE CHECKSUM: 59394322b3f5c10668debaf64d3e4805d331f021
+PODFILE CHECKSUM: e9fc2e7432d1d514011fdcf01deed9da9e889567
 
 COCOAPODS: 1.9.1

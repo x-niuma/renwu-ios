@@ -9,6 +9,7 @@
 import UIKit
 
 class MicMeHeader: UIView {
+    var vc: MicMeViewController!
     
     lazy var statusbar: UIView = {
         let view = UIView()
@@ -27,11 +28,13 @@ class MicMeHeader: UIView {
         btn.tintColor = UIColor.white
         btn.setImage(UIImage(named: "setting-white")?.withRenderingMode(.alwaysTemplate), for: .normal)
         btn.contentMode = .scaleToFill
+        btn.addTarget(self, action: #selector(gotoSetting), for: .touchUpInside)
         return btn
     }()
     
     lazy var saomaBtn: UIButton = {
         let btn = UIButton()
+        btn.isHidden = true
         btn.tintColor = UIColor.white
         btn.setImage(UIImage(named: "saoma-white")?.withRenderingMode(.alwaysTemplate), for: .normal)
         return btn
@@ -51,6 +54,16 @@ class MicMeHeader: UIView {
         navbar.addSubview(settingBtn)
         navbar.addSubview(saomaBtn)
         navbar.addSubview(titleLabel)
+    }
+    
+    @objc func gotoSetting() {
+        if (!self.vc.isLogined) {
+            micro_task.login(currentVC: self.vc) { (userInfo) in
+                micro_task.gotoSetting(currentVC: self.vc)
+            }
+        } else {
+            micro_task.gotoSetting(currentVC: self.vc)
+        }
     }
     
     @objc func makeInitLayout() {
@@ -83,13 +96,11 @@ class MicMeHeader: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-//        self.frame = frame
-        
         self.makeInitSubviews()
         self.makeInitLayout()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }

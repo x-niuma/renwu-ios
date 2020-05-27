@@ -17,7 +17,7 @@ class MicNiurenTableViewCell2: UITableViewCell {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 16)
         label.textColor = UIColor.hex("#000")
-        label.backgroundColor = UIColor.blue
+//        label.backgroundColor = UIColor.blue
         return label
     }()
     
@@ -26,7 +26,7 @@ class MicNiurenTableViewCell2: UITableViewCell {
         label.font = UIFont.systemFont(ofSize: 11)
         label.textColor = UIColor.hex("#8a8a8a")
         label.numberOfLines = 0
-        label.backgroundColor = UIColor.red
+//        label.backgroundColor = UIColor.red
         return label
     }()
     
@@ -65,7 +65,7 @@ class MicNiurenTableViewCell2: UITableViewCell {
         v.text = "成就：0"
         v.font = UIFont.systemFont(ofSize: 12)
         v.textColor = UIColor.hex("#8a8a8a")
-        v.backgroundColor = UIColor.purple
+//        v.backgroundColor = UIColor.purple
         return v
     }()
     

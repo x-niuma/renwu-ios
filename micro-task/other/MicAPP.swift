@@ -37,8 +37,8 @@ let registerUrl = baseUrl + "/user/register/" // 用户注册
 let getUserAssetsUrl = baseUrl + "/user/getUserAssets/" // 获取用户资产
 let getDemandListUrl = baseUrl + "/demand/" // 获取需求列表
 let getProjectCategory = baseUrl + "/projectCategory/" // 获取需求分类
-let getCheckinStateUrl = baseUrl + "/checkin"
-
+let getCheckinStateUrl = baseUrl + "/checkin" // 获取签到状态
+let getLoginStatusUrl = baseUrl + "/user/checkLogin" // 获取登录状态
 
 // MARK: -颜色
 let lineColor = UIColor.hex("#f4f4f4")
@@ -50,8 +50,7 @@ func rgbaColor(r: CGFloat, g: CGFloat, b: CGFloat) -> UIColor {
     return UIColor.init(red: r/255.0, green: g/255.0, blue: b/255.0, alpha: 1);
 }
 
-
-// MARK: -页面跳转配置
+// MARK: 公共方法
 func appendToken(url: String) -> String {
     let userDefaults = UserDefaults.standard
     let locale = userDefaults.object(forKey: "userInfo")
@@ -72,6 +71,13 @@ func appendToken(url: String) -> String {
     return nUrl + "&token=\(token)"
 }
 
+func loginOut() {
+    let userDefaults = UserDefaults.standard
+    userDefaults.removeObject(forKey: "userInfo")
+    userDefaults.synchronize()
+}
+
+// MARK: -页面跳转配置
 func gotoH5(currentVC: UIViewController, url: String, title: String) {
     let vc = MicWebViewController()
     vc.webviewUrl = appendToken(url: url)
@@ -159,8 +165,17 @@ func gotoPointList(currentVC: UIViewController) {
     gotoH5(currentVC: currentVC, url: url, title: "我的积分")
 }
 
-
 func gotoChatItem(currentVC: UIViewController, userId: String, nickname: String, avatar: String) {
     let url = h5BaseUrl + "/chatItem/\(userId)?avatar=\(avatar)&nickname=\(nickname)"
     gotoH5(currentVC: currentVC, url: url, title: nickname)
+}
+
+func gotoAboutUs(currentVC: UIViewController) {
+    let url = h5BaseUrl + "/about-us"
+    gotoH5(currentVC: currentVC, url: url, title: "关于我们")
+}
+
+func gotoSetting(currentVC: UIViewController) {
+    let view = MicSettingViewController()
+    currentVC.navigationController?.pushViewController(view, animated: true)
 }

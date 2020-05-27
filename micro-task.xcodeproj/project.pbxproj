@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09041518247E422D001F9BFA /* MicSetting2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09041516247E422D001F9BFA /* MicSetting2ViewController.swift */; };
+		09041519247E422D001F9BFA /* MicSetting2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09041517247E422D001F9BFA /* MicSetting2ViewController.xib */; };
+		0904151C247E448E001F9BFA /* MicSetting3TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0904151A247E448E001F9BFA /* MicSetting3TableViewController.swift */; };
+		0904151D247E448E001F9BFA /* MicSetting3TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0904151B247E448E001F9BFA /* MicSetting3TableViewController.xib */; };
 		090D093E2437A167005DFC45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090D093D2437A167005DFC45 /* AppDelegate.swift */; };
 		090D09422437A167005DFC45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090D09412437A167005DFC45 /* ViewController.swift */; };
 		090D09472437A168005DFC45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 090D09462437A168005DFC45 /* Assets.xcassets */; };
@@ -41,6 +45,7 @@
 		09496AA72444B3AE00B2558E /* MicDemandTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09496AA52444B3AE00B2558E /* MicDemandTableViewCell.swift */; };
 		09496AA82444B3AE00B2558E /* MicDemandTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09496AA62444B3AE00B2558E /* MicDemandTableViewCell.xib */; };
 		0953E76E243A06B500554025 /* MicNiurenDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0953E76D243A06B500554025 /* MicNiurenDetailViewController.swift */; };
+		0956A909247D73D300D1B2BD /* MicSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0956A908247D73D300D1B2BD /* MicSettingViewController.swift */; };
 		0958637024384341006017A6 /* MicNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0958636F24384341006017A6 /* MicNavigationViewController.swift */; };
 		0958637224387CDD006017A6 /* MicProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0958637124387CDD006017A6 /* MicProject.swift */; };
 		095863782438D348006017A6 /* MicNiuren.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095863772438D348006017A6 /* MicNiuren.swift */; };
@@ -50,7 +55,6 @@
 		099ADFB2245D31510063A6E1 /* MicMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099ADFB1245D31510063A6E1 /* MicMeViewController.swift */; };
 		099E935D245B0344001C5AAB /* MicMeUserCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099E935C245B0344001C5AAB /* MicMeUserCard.swift */; };
 		09A453AA24504C32009559F7 /* TRefreshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A453A924504C32009559F7 /* TRefreshViewController.swift */; };
-		09A8081D24498E590078E909 /* MicMeNavibar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A8081C24498E590078E909 /* MicMeNavibar.swift */; };
 		09B1DD2124489BB600FC8441 /* MicBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B1DD2024489BB600FC8441 /* MicBaseViewController.swift */; };
 		09B1DD232448BAEE00FC8441 /* MicSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B1DD222448BAEE00FC8441 /* MicSearchViewController.swift */; };
 		09BCBBFF2445E71900918DAB /* MicDemand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BCBBFE2445E71900918DAB /* MicDemand.swift */; };
@@ -75,6 +79,10 @@
 
 /* Begin PBXFileReference section */
 		090005E0244DF960009FC8D0 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		09041516247E422D001F9BFA /* MicSetting2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicSetting2ViewController.swift; sourceTree = "<group>"; };
+		09041517247E422D001F9BFA /* MicSetting2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MicSetting2ViewController.xib; sourceTree = "<group>"; };
+		0904151A247E448E001F9BFA /* MicSetting3TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicSetting3TableViewController.swift; sourceTree = "<group>"; };
+		0904151B247E448E001F9BFA /* MicSetting3TableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MicSetting3TableViewController.xib; sourceTree = "<group>"; };
 		090D093A2437A167005DFC45 /* micro_task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = micro_task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		090D093D2437A167005DFC45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		090D09412437A167005DFC45 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +120,7 @@
 		09496AA62444B3AE00B2558E /* MicDemandTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MicDemandTableViewCell.xib; sourceTree = "<group>"; };
 		0953E76D243A06B500554025 /* MicNiurenDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicNiurenDetailViewController.swift; sourceTree = "<group>"; };
 		0953E76F243A136D00554025 /* micro-taskSwift-Briding-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "micro-taskSwift-Briding-Header.h"; sourceTree = "<group>"; };
+		0956A908247D73D300D1B2BD /* MicSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicSettingViewController.swift; sourceTree = "<group>"; };
 		0958636F24384341006017A6 /* MicNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicNavigationViewController.swift; sourceTree = "<group>"; };
 		0958637124387CDD006017A6 /* MicProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicProject.swift; sourceTree = "<group>"; };
 		095863772438D348006017A6 /* MicNiuren.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicNiuren.swift; sourceTree = "<group>"; };
@@ -123,7 +132,6 @@
 		099ADFB1245D31510063A6E1 /* MicMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicMeViewController.swift; sourceTree = "<group>"; };
 		099E935C245B0344001C5AAB /* MicMeUserCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicMeUserCard.swift; sourceTree = "<group>"; };
 		09A453A924504C32009559F7 /* TRefreshViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRefreshViewController.swift; sourceTree = "<group>"; };
-		09A8081C24498E590078E909 /* MicMeNavibar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicMeNavibar.swift; sourceTree = "<group>"; };
 		09B1DD2024489BB600FC8441 /* MicBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicBaseViewController.swift; sourceTree = "<group>"; };
 		09B1DD222448BAEE00FC8441 /* MicSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicSearchViewController.swift; sourceTree = "<group>"; };
 		09BCBBFE2445E71900918DAB /* MicDemand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicDemand.swift; sourceTree = "<group>"; };
@@ -358,6 +366,11 @@
 				09FB5A9D2457B901005E3C5B /* view */,
 				099ADFAF245D30DF0063A6E1 /* MicMeViewController */,
 				099ADFB0245D30F40063A6E1 /* MicLoginViewController */,
+				0956A908247D73D300D1B2BD /* MicSettingViewController.swift */,
+				09041516247E422D001F9BFA /* MicSetting2ViewController.swift */,
+				09041517247E422D001F9BFA /* MicSetting2ViewController.xib */,
+				0904151A247E448E001F9BFA /* MicSetting3TableViewController.swift */,
+				0904151B247E448E001F9BFA /* MicSetting3TableViewController.xib */,
 			);
 			path = "Me(我的)";
 			sourceTree = "<group>";
@@ -486,7 +499,6 @@
 		09FB5A9D2457B901005E3C5B /* view */ = {
 			isa = PBXGroup;
 			children = (
-				09A8081C24498E590078E909 /* MicMeNavibar.swift */,
 				09FB5A9E245842BE005E3C5B /* MicMeHeader.swift */,
 				099E935C245B0344001C5AAB /* MicMeUserCard.swift */,
 			);
@@ -568,8 +580,10 @@
 				090D094A2437A168005DFC45 /* LaunchScreen.storyboard in Resources */,
 				09EC0490243960D3006ADFF2 /* MicNiurenTableViewCell.xib in Resources */,
 				09EC048C24395F06006ADFF2 /* MicChatViewController.xib in Resources */,
+				0904151D247E448E001F9BFA /* MicSetting3TableViewController.xib in Resources */,
 				09D02DE4243F7EC4001BD3EE /* MicLoginViewController.xib in Resources */,
 				090D09472437A168005DFC45 /* Assets.xcassets in Resources */,
+				09041519247E422D001F9BFA /* MicSetting2ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,13 +655,15 @@
 			files = (
 				09BCBC03244610C400918DAB /* MicUser.swift in Sources */,
 				091DA0F92446E06400F85B54 /* Demo1ViewController.swift in Sources */,
+				09041518247E422D001F9BFA /* MicSetting2ViewController.swift in Sources */,
 				0958637224387CDD006017A6 /* MicProject.swift in Sources */,
-				09A8081D24498E590078E909 /* MicMeNavibar.swift in Sources */,
 				09F60757244757CF00C960F5 /* MicExtend.swift in Sources */,
 				090D09662437A34F005DFC45 /* MicTabbarViewController.swift in Sources */,
 				0958637024384341006017A6 /* MicNavigationViewController.swift in Sources */,
+				0904151C247E448E001F9BFA /* MicSetting3TableViewController.swift in Sources */,
 				09D7497F2442FDC700FEA5FF /* MicPerson.swift in Sources */,
 				091DA1012446E0DD00F85B54 /* TaoBaoCustomTabBar.swift in Sources */,
+				0956A909247D73D300D1B2BD /* MicSettingViewController.swift in Sources */,
 				09B1DD232448BAEE00FC8441 /* MicSearchViewController.swift in Sources */,
 				09B1DD2124489BB600FC8441 /* MicBaseViewController.swift in Sources */,
 				091DA1002446E0DD00F85B54 /* TaoBaoCustomTabBarViewController.swift in Sources */,
@@ -763,7 +779,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -817,7 +833,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -832,16 +848,18 @@
 			baseConfigurationReference = F7EC79AA42057D3BA22B0630 /* Pods-micro-task.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 8FCKF5WQUJ;
+				DEVELOPMENT_TEAM = 8U933U9276;
 				INFOPLIST_FILE = "micro-task/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.airtim.contact;
+				PRODUCT_BUNDLE_IDENTIFIER = com.airtim.web;
 				PRODUCT_NAME = micro_task;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/micro-taskSwift-Briding-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -854,16 +872,18 @@
 			baseConfigurationReference = B28245315A308CDF77655AE5 /* Pods-micro-task.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 8FCKF5WQUJ;
+				DEVELOPMENT_TEAM = 8U933U9276;
 				INFOPLIST_FILE = "micro-task/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.airtim.contact;
+				PRODUCT_BUNDLE_IDENTIFIER = com.airtim.web;
 				PRODUCT_NAME = micro_task;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/micro-taskSwift-Briding-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
