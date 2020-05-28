@@ -52,6 +52,9 @@
 		095884882460551100D86E14 /* RadianGridient.m in Sources */ = {isa = PBXBuildFile; fileRef = 095884872460551100D86E14 /* RadianGridient.m */; };
 		0958848B2460551700D86E14 /* DXRadianLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0958848A2460551700D86E14 /* DXRadianLayerView.m */; };
 		09722D8C244A9F88009FDAF6 /* MicWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722D8B244A9F88009FDAF6 /* MicWebViewController.swift */; };
+		09909D3B247FFE330002A41F /* MicLogin2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09909D3A247FFE330002A41F /* MicLogin2ViewController.swift */; };
+		09909D3D24800D370002A41F /* MicLoginForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09909D3C24800D370002A41F /* MicLoginForm.swift */; };
+		09909D3F24800D4F0002A41F /* MicRigsterForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09909D3E24800D4F0002A41F /* MicRigsterForm.swift */; };
 		099ADFB2245D31510063A6E1 /* MicMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099ADFB1245D31510063A6E1 /* MicMeViewController.swift */; };
 		099E935D245B0344001C5AAB /* MicMeUserCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099E935C245B0344001C5AAB /* MicMeUserCard.swift */; };
 		09A453AA24504C32009559F7 /* TRefreshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A453A924504C32009559F7 /* TRefreshViewController.swift */; };
@@ -129,6 +132,9 @@
 		095884892460551700D86E14 /* DXRadianLayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXRadianLayerView.h; sourceTree = "<group>"; };
 		0958848A2460551700D86E14 /* DXRadianLayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXRadianLayerView.m; sourceTree = "<group>"; };
 		09722D8B244A9F88009FDAF6 /* MicWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicWebViewController.swift; sourceTree = "<group>"; };
+		09909D3A247FFE330002A41F /* MicLogin2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicLogin2ViewController.swift; sourceTree = "<group>"; };
+		09909D3C24800D370002A41F /* MicLoginForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicLoginForm.swift; sourceTree = "<group>"; };
+		09909D3E24800D4F0002A41F /* MicRigsterForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicRigsterForm.swift; sourceTree = "<group>"; };
 		099ADFB1245D31510063A6E1 /* MicMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicMeViewController.swift; sourceTree = "<group>"; };
 		099E935C245B0344001C5AAB /* MicMeUserCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicMeUserCard.swift; sourceTree = "<group>"; };
 		09A453A924504C32009559F7 /* TRefreshViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRefreshViewController.swift; sourceTree = "<group>"; };
@@ -371,6 +377,9 @@
 				09041517247E422D001F9BFA /* MicSetting2ViewController.xib */,
 				0904151A247E448E001F9BFA /* MicSetting3TableViewController.swift */,
 				0904151B247E448E001F9BFA /* MicSetting3TableViewController.xib */,
+				09909D3A247FFE330002A41F /* MicLogin2ViewController.swift */,
+				09909D3C24800D370002A41F /* MicLoginForm.swift */,
+				09909D3E24800D4F0002A41F /* MicRigsterForm.swift */,
 			);
 			path = "Me(我的)";
 			sourceTree = "<group>";
@@ -693,6 +702,7 @@
 				0958848B2460551700D86E14 /* DXRadianLayerView.m in Sources */,
 				09D7498124431BB400FEA5FF /* MicAPP.swift in Sources */,
 				09CA9EF8243AE10B0094108B /* MicDemandCategory.swift in Sources */,
+				09909D3F24800D4F0002A41F /* MicRigsterForm.swift in Sources */,
 				09BCBC01244601E000918DAB /* MicBaseResponse.swift in Sources */,
 				091DA0F32446E06400F85B54 /* Demo6ViewController.swift in Sources */,
 				09EC048B24395F06006ADFF2 /* MicChatViewController.swift in Sources */,
@@ -704,6 +714,7 @@
 				09722D8C244A9F88009FDAF6 /* MicWebViewController.swift in Sources */,
 				091DA0DF2446E04F00F85B54 /* AnimationTabBarViewController.swift in Sources */,
 				091DA0FC2446E0D400F85B54 /* UITabBar+HahnBadge.swift in Sources */,
+				09909D3B247FFE330002A41F /* MicLogin2ViewController.swift in Sources */,
 				091DA0F02446E06400F85B54 /* SuperViewController.swift in Sources */,
 				091DA0F42446E06400F85B54 /* Demo5ViewController.swift in Sources */,
 				091DA0F72446E06400F85B54 /* Demo2ViewController.swift in Sources */,
@@ -711,6 +722,7 @@
 				091DA0E42446E05B00F85B54 /* CustomTabBarViewController.swift in Sources */,
 				095863782438D348006017A6 /* MicNiuren.swift in Sources */,
 				0916740A243AD60600181C41 /* MicHomeViewController.swift in Sources */,
+				09909D3D24800D370002A41F /* MicLoginForm.swift in Sources */,
 				091DA0E32446E05B00F85B54 /* CustomTabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

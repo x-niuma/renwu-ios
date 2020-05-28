@@ -238,22 +238,35 @@ class MicMeViewController: UIViewController {
             make.top.equalToSuperview().offset(12)
         }
         addFooterMenu()
+        
+        //                    loginView.loginCb = {(userInfo: MicPerson) in
+        //                        self.getUserInfo()
+        //                        if (index == 3) {micro_task.gotoUserInfo(currentVC: self)}
+        //                        if (index == 2) {micro_task.gotoCreateDemand(currentVC: self)}
+        //                        if (index == 1) {micro_task.gotoMyDemand(currentVC: self)}
+        //                        if (index == 0) {micro_task.gotoMyEnroll(currentVC: self)}
+        //                    if (index == 4) {micro_task.gotoAboutUs(currentVC: self)}
+        //                               if (index == 5) {micro_task.gotoSetting(currentVC: self)}
+        //                    }
+        let loginView = MicLogin2ViewController()
+        self.present(loginView, animated: true){}
     }
     
     @objc func handleClickMenu(sender: UIButton) {
         for (index, btn) in footerMenu.subviews.enumerated() {
             if (btn === sender) {
                 if (menu1[index]["needLogin"]! as! Bool && !self.isLogined) {
-                    let loginView = MicLoginViewController();
-                    loginView.loginCb = {(userInfo: MicPerson) in
-                        self.getUserInfo()
-                        if (index == 3) {micro_task.gotoUserInfo(currentVC: self)}
-                        if (index == 2) {micro_task.gotoCreateDemand(currentVC: self)}
-                        if (index == 1) {micro_task.gotoMyDemand(currentVC: self)}
-                        if (index == 0) {micro_task.gotoMyEnroll(currentVC: self)}
-                    if (index == 4) {micro_task.gotoAboutUs(currentVC: self)}
-                               if (index == 5) {micro_task.gotoSetting(currentVC: self)}
-                    }
+                    // let loginView = MicLoginViewController();
+                    let loginView = MicLogin2ViewController()
+//                    loginView.loginCb = {(userInfo: MicPerson) in
+//                        self.getUserInfo()
+//                        if (index == 3) {micro_task.gotoUserInfo(currentVC: self)}
+//                        if (index == 2) {micro_task.gotoCreateDemand(currentVC: self)}
+//                        if (index == 1) {micro_task.gotoMyDemand(currentVC: self)}
+//                        if (index == 0) {micro_task.gotoMyEnroll(currentVC: self)}
+//                    if (index == 4) {micro_task.gotoAboutUs(currentVC: self)}
+//                               if (index == 5) {micro_task.gotoSetting(currentVC: self)}
+//                    }
                     self.present(loginView, animated: true){}
                     return
                 }

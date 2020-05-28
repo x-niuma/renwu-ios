@@ -33,11 +33,51 @@ struct UserInfoData: Codable {
 
 class MicLoginViewController: UIViewController {
     
-    @IBOutlet weak var submitBtn: UIButton!
-    @IBOutlet weak var accountField: UITextField!
-    @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var loginSwitch: UIButton! // 切换按钮(切换登录或者注册)
-    @IBOutlet weak var switchTip: UILabel! // 提示
+//    @IBOutlet weak var submitBtn: UIButton!
+//    @IBOutlet weak var accountField: UITextField!
+//    @IBOutlet weak var passwordField: UITextField!
+//    @IBOutlet weak var loginSwitch: UIButton! // 切换按钮(切换登录或者注册)
+//    @IBOutlet weak var switchTip: UILabel! // 提示
+    
+    lazy var form: UIView = {
+        let v = UIView()
+        return v
+    }()
+    
+    lazy var submitBtn: UIButton = {
+       let v = UIButton()
+        return v
+    }()
+    
+    lazy var loginSwitch: UIButton = {
+        let v = UIButton()
+        return v
+    }()
+    
+    lazy var switchTip: UILabel = {
+        let v = UILabel()
+        return v
+    }()
+    
+    lazy var accountField: UITextField = {
+       let v = UITextField()
+        return v
+    }()
+    
+    lazy var passwordField: UITextField = {
+       let v = UITextField()
+        return v
+    }()
+    
+    lazy var codeBtn: UIButton = {
+        let v = UIButton()
+        return v
+    }()
+    
+    lazy var codeField: UITextField = {
+        let v = UITextField()
+        return v
+    }()
     
     var loginCb:((_ userInfo: MicPerson)->Void)?
     
@@ -47,6 +87,11 @@ class MicLoginViewController: UIViewController {
         super.viewDidLoad()
         submitBtn.addTarget(self, action: #selector(handleSubmit), for: .touchUpInside)
         loginSwitch.addTarget(self, action: #selector(handleSwitch), for: .touchUpInside)
+    }
+    
+    private func makeInitSubviews() {
+        view.addSubview(form)
+        form.addSubview(accountField)
     }
     
     override func viewWillAppear(_ animated: Bool) {
