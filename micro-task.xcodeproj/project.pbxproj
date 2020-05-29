@@ -11,6 +11,7 @@
 		09041519247E422D001F9BFA /* MicSetting2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09041517247E422D001F9BFA /* MicSetting2ViewController.xib */; };
 		0904151C247E448E001F9BFA /* MicSetting3TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0904151A247E448E001F9BFA /* MicSetting3TableViewController.swift */; };
 		0904151D247E448E001F9BFA /* MicSetting3TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0904151B247E448E001F9BFA /* MicSetting3TableViewController.xib */; };
+		0908ABC8248091820036159C /* MicTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0908ABC7248091820036159C /* MicTextField.swift */; };
 		090D093E2437A167005DFC45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090D093D2437A167005DFC45 /* AppDelegate.swift */; };
 		090D09422437A167005DFC45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090D09412437A167005DFC45 /* ViewController.swift */; };
 		090D09472437A168005DFC45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 090D09462437A168005DFC45 /* Assets.xcassets */; };
@@ -86,6 +87,7 @@
 		09041517247E422D001F9BFA /* MicSetting2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MicSetting2ViewController.xib; sourceTree = "<group>"; };
 		0904151A247E448E001F9BFA /* MicSetting3TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicSetting3TableViewController.swift; sourceTree = "<group>"; };
 		0904151B247E448E001F9BFA /* MicSetting3TableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MicSetting3TableViewController.xib; sourceTree = "<group>"; };
+		0908ABC7248091820036159C /* MicTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicTextField.swift; sourceTree = "<group>"; };
 		090D093A2437A167005DFC45 /* micro_task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = micro_task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		090D093D2437A167005DFC45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		090D09412437A167005DFC45 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				0958636A243832C4006017A6 /* Me(我的) */,
 				095863792438D9FE006017A6 /* model */,
 				0958636E243836BD006017A6 /* common */,
+				0908ABC7248091820036159C /* MicTextField.swift */,
 			);
 			path = "micro-task";
 			sourceTree = "<group>";
@@ -706,6 +709,7 @@
 				09BCBC01244601E000918DAB /* MicBaseResponse.swift in Sources */,
 				091DA0F32446E06400F85B54 /* Demo6ViewController.swift in Sources */,
 				09EC048B24395F06006ADFF2 /* MicChatViewController.swift in Sources */,
+				0908ABC8248091820036159C /* MicTextField.swift in Sources */,
 				091DA10C2446E0F200F85B54 /* JDAnimationTabBarViewController.swift in Sources */,
 				09D749872443453C00FEA5FF /* HMBaseModel.swift in Sources */,
 				09496AA72444B3AE00B2558E /* MicDemandTableViewCell.swift in Sources */,

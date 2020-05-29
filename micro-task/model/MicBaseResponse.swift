@@ -9,6 +9,10 @@
 import UIKit
 import HandyJSON
 
+class MicBaseData: HandyJSON {
+    required init() {}
+}
+
 // 假设这是服务端返回的统一定义的 response 格式
 class MicBaseResponse<T: HandyJSON>: HandyJSON {
     var retCode: String?

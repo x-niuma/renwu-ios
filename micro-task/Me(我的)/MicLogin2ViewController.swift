@@ -7,17 +7,21 @@
 //
 
 import UIKit
+import Alamofire
+import HandyJSON
 
 class MicLogin2ViewController: UIViewController {
-        
-    lazy var loginForm: UIView = {
-       return MicLoginForm()
+    var loginCb:((_ userInfo: MicPerson)->Void)? // 登录回调
+    var isLogin: Bool = true; // 表示是否为登录, 值为false时, 表示注册帐号
+    
+    lazy var loginForm: MicLoginForm = {
+        return MicLoginForm()
     }()
     
-    lazy var registerForm: UIView = {
-       return MicRigsterForm()
+    lazy var registerForm: MicRigsterForm = {
+        return MicRigsterForm()
     }()
-
+    
     lazy var submitBtn: UIButton = {
         let v = UIButton(type: .custom)
         v.setTitleColor(UIColor.white, for: .normal)
@@ -27,7 +31,7 @@ class MicLogin2ViewController: UIViewController {
         v.addTarget(self, action: #selector(handleSubmit), for: .touchUpInside)
         return v
     }()
-
+    
     lazy var switchBtn: UIButton = {
         let v = UIButton(type: .custom)
         v.setTitleColor(UIColor.hex("#615963"), for: .normal)
@@ -35,16 +39,83 @@ class MicLogin2ViewController: UIViewController {
         v.addTarget(self, action: #selector(handleSwitch), for: .touchUpInside)
         return v
     }()
-
+    
     lazy var switchTip: UILabel = {
         let v = UILabel()
         v.textColor = UIColor.hex("#cccccc")
         v.font = UIFont.systemFont(ofSize: 12)
         return v
     }()
-
+    
     @objc func handleSubmit() {
-        print(111)
+        if (!self.loginForm.isHidden) {
+            let email = self.loginForm.accountField.text
+            let password = self.loginForm.passwordField.text
+            if ((email != nil) && (password != nil)) {
+                doLogin(email: email!, password: password!)
+            }
+        } else {
+            let email = self.registerForm.accountField.text
+            let password = self.registerForm.passwordField.text
+            let code = self.registerForm.accountField.text
+            if ((email != nil) && (password != nil) && (code != nil)) {
+                doLogin(email: email!, password: password!, code: code!)
+            }
+        }
+    }
+    
+    // 获取注册验证码
+    func doGetCode(email: String) {
+        class Data: HandyJSON {
+            required init() {}
+        }
+        AF.request(getEmailCodeUrl, method: .get).responseString { response in
+            if let _value = response.value {
+                if let _res = MicBaseResponse<Data>.deserialize(from: _value) {
+                    if (_res.retCode == "0") {
+                        print("ddddd")
+                    }
+                }
+            }
+        }
+    }
+    
+    // 登录方法
+    func doLogin(email: String, password: String, code: String = "") {
+        let params = [ "email": email, "password": password, "code": code]
+        let isLogin = !self.loginForm.isHidden
+        
+        AF.request(isLogin ? loginUrl : registerUrl, method: .post, parameters: params).responseJSON { (resJson) in
+            if let resData = resJson.data {
+                let decoder = JSONDecoder()
+                do {
+                    let model = try decoder.decode(UserInfoRes.self, from: resData)
+                    if (model.retCode == "0") {
+                        let userInfo = MicPerson()
+                        userInfo.avatar = model.data?.avatar
+                        userInfo.nickname = model.data?.nickname
+                        userInfo.words = model.data?.words
+                        userInfo.mobile = model.data?.mobile
+                        userInfo.token = model.data?.token
+                        
+                        let data = try NSKeyedArchiver.archivedData(withRootObject: userInfo, requiringSecureCoding: true)
+                        
+                        let userDefaults = UserDefaults.standard
+                        userDefaults.set(data, forKey: "userInfo")
+                        userDefaults.synchronize()
+                        
+                        self.dismiss(animated: true, completion: nil)
+                        print("登录成功")
+                        self.loginCb?(userInfo)
+                    } else {
+                        print("登录失败: \(model)")
+                    }
+                }
+                catch {
+                    print(error)
+                }
+            }
+        }
     }
     
     @objc func handleSwitch() {
@@ -54,7 +125,7 @@ class MicLogin2ViewController: UIViewController {
             switchRegister()
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.hex("#f5f5f5")

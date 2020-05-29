@@ -12,6 +12,7 @@
 #import "VTMagic.h"
 #import "MJRefresh.h"
 #import "RadianGridient.h"
+#import "MBProgressHUD.h"
 //#import "TUIKit.h"
 //#import "TUIConversationListController.h"
 

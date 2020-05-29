@@ -17,5 +17,6 @@ target 'micro-task' do
   pod 'MJRefresh'
   pod 'TXIMSDK_TUIKit_iOS'
   pod 'Toast-Swift', '~> 5.0.1'
+  pod 'MBProgressHUD', '~> 1.2.0'
 
 end

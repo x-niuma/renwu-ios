@@ -6,6 +6,7 @@ PODS:
   - Kingfisher (5.13.3):
     - Kingfisher/Core (= 5.13.3)
   - Kingfisher/Core (5.13.3)
+  - MBProgressHUD (1.2.0)
   - MJRefresh (3.3.1)
   - MMLayout (0.2.0)
   - ReactiveObjC (3.1.1)
@@ -32,6 +33,7 @@ DEPENDENCIES:
   - EasyJSBridge
   - HandyJSON
   - Kingfisher
+  - MBProgressHUD (~> 1.2.0)
   - MJRefresh
   - SnapKit
   - Toast-Swift (~> 5.0.1)
@@ -45,6 +47,7 @@ SPEC REPOS:
     - HandyJSON
     - ISVImageScrollView
     - Kingfisher
+    - MBProgressHUD
     - MJRefresh
     - MMLayout
     - ReactiveObjC
@@ -62,6 +65,7 @@ SPEC CHECKSUMS:
   HandyJSON: d45b8415c501e3affc59ca9762c1197ff0feb646
   ISVImageScrollView: ba511d12a1661b40feb8921309c0854bf93ec749
   Kingfisher: d2b3d6a7200c93b34de9afcdf25c8dd9282ec277
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
   MMLayout: 3fb59d58eeb8656c64e61d550fb0088e10666c11
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
@@ -73,6 +77,6 @@ SPEC CHECKSUMS:
   TXIMSDK_TUIKit_iOS: 7c5a6556929b590e3d2cfb85a865a3c5b28f4d87
   VTMagic: b49e5f456dbcbfd9a3588ba92417233a105bc193
 
-PODFILE CHECKSUM: e9fc2e7432d1d514011fdcf01deed9da9e889567
+PODFILE CHECKSUM: dab7694e808ae5fdf9ff99e6f2f41dc0da9406e3
 
 COCOAPODS: 1.9.1

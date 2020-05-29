@@ -39,6 +39,7 @@ let getDemandListUrl = baseUrl + "/demand/" // 获取需求列表
 let getProjectCategory = baseUrl + "/projectCategory/" // 获取需求分类
 let getCheckinStateUrl = baseUrl + "/checkin" // 获取签到状态
 let getLoginStatusUrl = baseUrl + "/user/checkLogin" // 获取登录状态
+let getEmailCodeUrl = baseUrl + "/common/getEmailCode" // 获取邮箱验证码
 
 // MARK: -颜色
 let lineColor = UIColor.hex("#f4f4f4")
@@ -76,6 +77,26 @@ func loginOut() {
     userDefaults.removeObject(forKey: "userInfo")
     userDefaults.synchronize()
 }
+
+// Loading
+func showLoading(view: UIView) -> MBProgressHUD {
+     let hud = MBProgressHUD.showAdded(to: view, animated: true)
+     hud.label.text = "加载中..."
+     hud.label.font = UIFont.systemFont(ofSize: 12)
+     // hud.contentColor = UIColor.blue
+     hud.removeFromSuperViewOnHide = true
+     return hud
+ }
+ 
+ // Tip
+func showTip(message: String = "操作成功", view: UIView) {
+     let hud = MBProgressHUD.showAdded(to: view, animated: true)
+     hud.mode = .text
+     hud.label.text = message
+     hud.label.font = UIFont.systemFont(ofSize: 12)
+     // hud.contentColor = UIColor.blue
+     hud.hide(animated: true, afterDelay: 1.5)
+ }
 
 // MARK: -页面跳转配置
 func gotoH5(currentVC: UIViewController, url: String, title: String) {
