@@ -22,6 +22,7 @@ class MicUser: HandyJSON {
     var words: String? // 个人介绍
     var residence: String? // 居住地
     var background: String? // 主页背景
-    
+    var token: String? // 登录密码
+
     required init() {}
 }

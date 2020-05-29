@@ -111,11 +111,11 @@ class MicRigsterForm: UIView {
     
     // Get email code
     func doGetCode(email: String) {
-        let t = micro_task.showLoading(view: self.superview!)
+        let indictor = micro_task.showLoading(view: self.superview!)
         AF.request("\(getEmailCodeUrl)?email=\(email)", method: .get).responseString { response in
             if let _value = response.value {
                 if let _res = MicBaseResponse<MicBaseData>.deserialize(from: _value) {
-                    t.hide(animated: true)
+                    indictor.hide(animated: true)
                     let msg = _res.retCode == "0" ? "发送成功" : _res.errMsg!
                     micro_task.showTip(message: msg, view: self.superview!)
                 }
