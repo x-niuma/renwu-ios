@@ -149,6 +149,7 @@ class MicLoginViewController: UIViewController {
         userInfo.words = micUser.words
         userInfo.mobile = micUser.mobile
         userInfo.token = micUser.token
+        userInfo.email = micUser.email
         do {
             let data = try NSKeyedArchiver.archivedData(withRootObject: userInfo, requiringSecureCoding: true)
             let userDefaults = UserDefaults.standard

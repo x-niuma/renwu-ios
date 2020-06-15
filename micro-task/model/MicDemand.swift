@@ -17,14 +17,14 @@ class MicDemand: HandyJSON {
     var description: String? // 描述
     var reward: Int? // 赏金
     // var imgs: String?
-    var create_time: String? // 创建时间
+    var createTime: String? // 创建时间
     // var update_time: String? // 更新时间
     var requires: String? // 技能要求
-    var app_type: String? // 应用类型
-    var project_type: String? // 项目类型
-    var app_type_id: Int? // 项目类型ID
-    var project_type_id: Int? // 应用类型ID
-    var user_id: Int? // 发布者用户ID
+    var appType: String? // 应用类型
+    var projectType: String? // 项目类型
+    var appTypeId: Int? // 项目类型ID
+    var projectTypeId: Int? // 应用类型ID
+    var userId: Int? // 发布者用户ID
     var userInfo: MicUser? // 发布者信息
     var enrollList: [Any]? // 报名列表
 }

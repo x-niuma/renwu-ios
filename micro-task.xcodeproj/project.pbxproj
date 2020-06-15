@@ -173,6 +173,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		0908ABCB24815D570036159C /* MicSettingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0956A908247D73D300D1B2BD /* MicSettingViewController.swift */,
+			);
+			path = MicSettingViewController;
+			sourceTree = "<group>";
+		};
 		090D09312437A166005DFC45 = {
 			isa = PBXGroup;
 			children = (
@@ -363,7 +371,7 @@
 				09FB5A9D2457B901005E3C5B /* view */,
 				099ADFAF245D30DF0063A6E1 /* MicMeViewController */,
 				099ADFB0245D30F40063A6E1 /* MicLoginViewController */,
-				0956A908247D73D300D1B2BD /* MicSettingViewController.swift */,
+				0908ABCB24815D570036159C /* MicSettingViewController */,
 			);
 			path = "Me(我的)";
 			sourceTree = "<group>";
@@ -840,8 +848,9 @@
 			baseConfigurationReference = F7EC79AA42057D3BA22B0630 /* Pods-micro-task.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 8U933U9276;
 				INFOPLIST_FILE = "micro-task/Info.plist";
@@ -851,7 +860,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.airtim.web;
 				PRODUCT_NAME = micro_task;
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = ppp;
 				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/micro-taskSwift-Briding-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -864,8 +873,9 @@
 			baseConfigurationReference = B28245315A308CDF77655AE5 /* Pods-micro-task.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 8U933U9276;
 				INFOPLIST_FILE = "micro-task/Info.plist";
@@ -875,7 +885,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.airtim.web;
 				PRODUCT_NAME = micro_task;
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = ppp;
 				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/micro-taskSwift-Briding-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

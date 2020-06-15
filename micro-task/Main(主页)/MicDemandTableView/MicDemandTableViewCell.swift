@@ -47,9 +47,9 @@ class MicDemandTableViewCell: UITableViewCell {
         self.contentView.layer.masksToBounds = true;
         
         self.title.text = "\(index + 1). \(demand.title!)"
-        self.appType.text = demand.app_type!
-        self.projectType.text = demand.project_type! + "任务"
-        self.createTime.text = demand.create_time!
+        self.appType.text = demand.appType!
+        self.projectType.text = demand.projectType! + "任务"
+        self.createTime.text = demand.createTime!
         self.skill.text = demand.requires!
         self.authorNickname.text = demand.userInfo?.nickname
         self.authorAvatar.kf.setImage(with: URL(string: (demand.userInfo?.avatar)!))

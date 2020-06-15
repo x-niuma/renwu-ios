@@ -45,8 +45,6 @@ extension MicTabbarViewController: UITabBarControllerDelegate {
     // 可以拿到当前的控制器
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         viewController.tabBarItem.badgeValue = nil;
-        // print(viewController.children)
-        // print(tabBarController.viewControllers?.count)
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {

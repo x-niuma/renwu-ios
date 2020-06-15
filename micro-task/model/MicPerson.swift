@@ -18,6 +18,7 @@ class MicPerson: NSObject, NSSecureCoding {
         coder.encode(words, forKey: "words")
         coder.encode(mobile, forKey: "mobile")
         coder.encode(token, forKey: "token")
+        coder.encode(email, forKey: "email")
     }
     
     // 解码(data 转对象)
@@ -28,6 +29,7 @@ class MicPerson: NSObject, NSSecureCoding {
         words = coder.decodeObject(forKey: "words") as? String
         mobile = coder.decodeObject(forKey: "mobile") as? String
         token = coder.decodeObject(forKey: "token") as? String
+        email = coder.decodeObject(forKey: "email") as? String
     }
     
     var nickname: String? // 用户昵称
@@ -35,6 +37,7 @@ class MicPerson: NSObject, NSSecureCoding {
     var words: String? // 用户介绍
     var mobile: String? // 电话号码
     var token: String? // 电话号码
+    var email: String? // 电子邮箱
     
     override init() {
         

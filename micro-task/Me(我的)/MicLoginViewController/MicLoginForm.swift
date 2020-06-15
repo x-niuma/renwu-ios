@@ -24,6 +24,7 @@ class MicLoginForm: UIView {
     lazy var passwordField: MicTextField = {
         let v = MicTextField()
         v.placeholder = "登录密码"
+        v.isSecureTextEntry = true
         v.attributedPlaceholder = NSAttributedString.init(
             string:"登录密码",
             attributes: [

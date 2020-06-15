@@ -248,7 +248,7 @@ class MicMeUserCard: UIView {
             make.top.equalTo(userAvatar).offset(8)
         }
         mobile.snp.makeConstraints { (make) in
-            make.width.equalTo(100)
+            make.width.equalTo(140)
             make.height.equalTo(30)
             make.left.equalTo(userAvatar.snp.right).offset(10)
             make.top.equalTo(nickname.snp.bottom).offset(0)
@@ -342,8 +342,8 @@ class MicMeUserCard: UIView {
         if let _nickname = self.userInfo?.nickname {
             self.nickname.text = _nickname
         }
-        if let _mobile = self.userInfo?.mobile {
-            self.mobile.text = _mobile
+        if let _email = self.userInfo?.email {
+            self.mobile.text = _email
         }
     }
     

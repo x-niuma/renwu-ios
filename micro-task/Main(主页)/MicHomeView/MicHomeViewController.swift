@@ -54,7 +54,7 @@ class MicHomeViewController: VTMagicController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addHeader();
-        self.navigationController?.tabBarController?.selectedIndex = 3;
+        // self.navigationController?.tabBarController?.selectedIndex = 3;
         
         self.navigationItem.title = "需求池"
         self.magicView.isHeaderHidden = false;

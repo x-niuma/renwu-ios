@@ -25,6 +25,7 @@ class MicRigsterForm: UIView {
     
     lazy var passwordField: MicTextField = {
         let v = MicTextField()
+        v.isSecureTextEntry = true
         v.attributedPlaceholder = NSAttributedString.init(
             string:"登录密码",
             attributes: [

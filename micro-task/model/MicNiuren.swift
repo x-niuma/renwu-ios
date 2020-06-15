@@ -18,8 +18,8 @@ struct MicNiuren: Codable {
     var gender: Int?
     var mobile: String?
     var email: String?
-    var create_time: String?
-    var login_time: String?
+    var createTime: String?
+    var loginTime: String?
     var college: String?
     var words: String?
     var residence: String?
