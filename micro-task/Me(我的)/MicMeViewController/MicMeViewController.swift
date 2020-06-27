@@ -24,7 +24,7 @@ class MicMeViewController: UIViewController {
         ["title": "设置", "needLogin": true]
     ];
     var userInfo: MicPerson? = nil // 用户信息
-    var assetInfo: MicUserAssestData? = nil // 资产信息
+    var assetInfo: MicUserAssets? = nil // 资产信息
     let headerViewH = 170 + 20 + kNavBarAndStatusBarHeight
     var menu2Btns = [UIButton]()
     var loginBtn = UIButton()
@@ -33,11 +33,16 @@ class MicMeViewController: UIViewController {
     var navColor = UIColor.hex("#615963")
     var isLogined: Bool = false // 是否登录(维护登录状态)
     
-    // 获取用户信息
+    /**
+     * 获取用户信息
+     */
     @objc func getUserInfo() {
         let userDefaults = UserDefaults.standard
         let locale = userDefaults.object(forKey: "userInfo")
         if (locale != nil) {
+            /**
+             * 之前登录过, 把用户信息取出来
+             */
             do {
                 let userInfo: MicPerson = try NSKeyedUnarchiver.unarchivedObject(ofClasses: [MicPerson.self], from: locale as! Data) as! MicPerson;
                 self.userInfo = userInfo;
@@ -45,12 +50,18 @@ class MicMeViewController: UIViewController {
                 print(error)
             }
         }
+        
         if (self.userInfo != nil) {
+            /**
+             * 本地已经缓存了用户信息, 先展示出来
+             * 然后判断登录是否过期, 如果过期, 需要清除页面上展示的用户信息
+             */
             headerView.updateUserInfo(userInfo: self.userInfo!)
+
             if (self.userInfo?.token) != nil {
                 self.getAccountInfo()
             } else {
-                headerView.clearLoginState()
+                clearLoginState()
             }
         } else {
             clearLoginState()
@@ -64,30 +75,45 @@ class MicMeViewController: UIViewController {
     // 获取账户信息
     func getAccountInfo() {
         let url = getUserAssetsUrl + "?token=\((self.userInfo?.token)!)"
-        AF.request(url).responseJSON { response in
-            if let resData = response.data {
-                let decoder = JSONDecoder()
-                do {
-                    let model = try decoder.decode(MicUserAssestRes.self, from: resData)
-                    if model.retCode == "0" {
-                        if let data = model.data {
-                            self.isLogined = true
-                            self.assetInfo = data
-                            self.headerView.updateMenu(assetInfo: self.assetInfo!)
-                        } else {
-                            self.isLogined = false
-                            self.headerView.clearLoginState()
-                        }
+        AF.request(url, method: .get).responseString { response in
+            if let _value = response.value {
+                if let _res = MicBaseResponse<MicUserAssets>.deserialize(from: _value) {
+                    if (_res.retCode == "0") {
+                        self.isLogined = true
+                        self.assetInfo = _res.data
+                        self.headerView.updateMenu(assetInfo: self.assetInfo!)
                     } else {
                         self.isLogined = false
-                        self.headerView.clearLoginState()
+                        self.clearLoginState()
                     }
-                }
-                catch {
-                    print(error)
                 }
             }
         }
+        
+//        AF.request(url).responseJSON { response in
+//            if let resData = response.data {
+//                let decoder = JSONDecoder()
+//                do {
+//                    let model = try decoder.decode(MicUserAssestRes.self, from: resData)
+//                    if model.retCode == "0" {
+//                        if let data = model.data {
+//                            self.isLogined = true
+//                            self.assetInfo = data
+//                            self.headerView.updateMenu(assetInfo: self.assetInfo!)
+//                        } else {
+//                            self.isLogined = false
+//                            self.clearLoginState()
+//                        }
+//                    } else {
+//                        self.isLogined = false
+//                        self.clearLoginState()
+//                    }
+//                }
+//                catch {
+//                    print(error)
+//                }
+//            }
+//        }
     }
     
     lazy var headerView: MicMeUserCard = {

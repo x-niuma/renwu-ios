@@ -17,7 +17,6 @@ class MicNiurenTableViewCell2: UITableViewCell {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 16)
         label.textColor = UIColor.hex("#000")
-//        label.backgroundColor = UIColor.blue
         return label
     }()
     
@@ -26,7 +25,6 @@ class MicNiurenTableViewCell2: UITableViewCell {
         label.font = UIFont.systemFont(ofSize: 11)
         label.textColor = UIColor.hex("#8a8a8a")
         label.numberOfLines = 0
-//        label.backgroundColor = UIColor.red
         return label
     }()
     
@@ -43,7 +41,7 @@ class MicNiurenTableViewCell2: UITableViewCell {
     
     lazy var chatBtn: UIButton = {
         let btn = UIButton()
-        btn.setTitle("向他请教", for: .normal)
+        btn.setTitle("向他咨询", for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 10)
         btn.setTitleColor(UIColor.hex("#8a8a8a"), for: .normal)
         btn.layer.borderColor = UIColor.hex("#8a8a8a").cgColor
@@ -54,13 +52,7 @@ class MicNiurenTableViewCell2: UITableViewCell {
     
     lazy var TLine: UIView = {
        let v = UIView()
-        v.backgroundColor = UIColor.hex("#f5f5f5f")
-        return v
-    }()
-    
-    lazy var BLine: UIView = {
-       let v = UIView()
-        v.backgroundColor = .red
+        v.backgroundColor = UIColor.hex("#f5f5f5")
         return v
     }()
     
@@ -77,7 +69,6 @@ class MicNiurenTableViewCell2: UITableViewCell {
         v.text = "成就：0"
         v.font = UIFont.systemFont(ofSize: 12)
         v.textColor = UIColor.hex("#8a8a8a")
-//        v.backgroundColor = UIColor.purple
         return v
     }()
     
@@ -121,18 +112,16 @@ class MicNiurenTableViewCell2: UITableViewCell {
     }
     
     private func makeInitSubviews() {
-//        contentView
+        contentView.backgroundColor = UIColor.hex("#f5f5f5")
         contentView.addSubview(TLine)
         contentView.addSubview(sort)
         contentView.addSubview(mainView)
-//        contentView.addSubview(avatarView)
-//        contentView.backgroundColor = UIColor.red
+        
         mainView.addSubview(avatarView)
         mainView.addSubview(nickname)
         mainView.addSubview(words)
         mainView.addSubview(chatBtn)
         mainView.addSubview(rcoinNum)
-        contentView.addSubview(BLine)
     }
     
     private func makeInitLayout () {
@@ -168,7 +157,6 @@ class MicNiurenTableViewCell2: UITableViewCell {
         rcoinNum.snp.makeConstraints { (make) in
             make.leading.equalTo(words)
             make.top.equalTo(words.snp.bottom).offset(10)
-//            make.height.greaterThanOrEqualTo(12)
             make.bottom.equalToSuperview().offset(-12)
         }
         chatBtn.snp.makeConstraints { (make) in

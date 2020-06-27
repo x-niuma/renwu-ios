@@ -30,7 +30,10 @@ let h5BaseUrl = "http://micro.airtlab.com"
 let baseUrl = "http://micro.airtlab.com/api"
 
 //let baseUrl = "http://192.168.0.104:8003"
-//let h5BaseUrl = "http://192.168.0.104:8000"
+//let h5BaseUrl = "http://192.168.0.104:8080"
+
+//let baseUrl = "http://192.168.200.122:8003"
+//let h5BaseUrl = "http://192.168.200.122:8080"
 
 let loginUrl = baseUrl + "/user/login/" // 用户登录
 let registerUrl = baseUrl + "/user/register/" // 用户注册
@@ -40,6 +43,7 @@ let getProjectCategory = baseUrl + "/projectCategory/" // 获取需求分类
 let getCheckinStateUrl = baseUrl + "/checkin" // 获取签到状态
 let getLoginStatusUrl = baseUrl + "/user/checkLogin" // 获取登录状态
 let getEmailCodeUrl = baseUrl + "/common/getEmailCode" // 获取邮箱验证码
+let getNuserListUrl = baseUrl + "/nuser" // 获取牛人列表
 
 // MARK: -颜色
 let lineColor = UIColor.hex("#f4f4f4")
@@ -49,6 +53,36 @@ let fontSecondColor = UIColor.hex("#646566")
 let fontGrayColor = UIColor.hex("#b3aeae")
 func rgbaColor(r: CGFloat, g: CGFloat, b: CGFloat) -> UIColor {
     return UIColor.init(red: r/255.0, green: g/255.0, blue: b/255.0, alpha: 1);
+}
+
+func getUserInfo() -> MicPerson? {
+    let userDefaults = UserDefaults.standard
+    let locale = userDefaults.object(forKey: "userInfo")
+    var userInfo: MicPerson? = nil
+    if (locale != nil) {
+        do {
+            userInfo = try NSKeyedUnarchiver.unarchivedObject(ofClasses: [MicPerson.self], from: locale as! Data) as? MicPerson;
+        } catch {
+            print(error)
+        }
+    }
+    return userInfo;
+}
+
+func getToken() -> String {
+    let userDefaults = UserDefaults.standard
+    let locale = userDefaults.object(forKey: "userInfo")
+    var userInfo: MicPerson? = nil
+    var token: String = "";
+    if (locale != nil) {
+        do {
+            userInfo = try NSKeyedUnarchiver.unarchivedObject(ofClasses: [MicPerson.self], from: locale as! Data) as? MicPerson;
+            token = userInfo?.token! ?? ""
+        } catch {
+            print(error)
+        }
+    }
+    return token;
 }
 
 // MARK: 公共方法
@@ -101,7 +135,7 @@ func showTip(message: String = "操作成功", view: UIView) {
 // MARK: -页面跳转配置
 func gotoH5(currentVC: UIViewController, url: String, title: String) {
     let vc = MicWebViewController()
-    vc.webviewUrl = appendToken(url: url)
+    vc.webviewUrl = url
     vc.title = title
     currentVC.navigationController?.pushViewController(vc, animated: true)
 }
@@ -199,4 +233,9 @@ func gotoAboutUs(currentVC: UIViewController) {
 func gotoSetting(currentVC: UIViewController) {
     let view = MicSettingViewController()
     currentVC.navigationController?.pushViewController(view, animated: true)
+}
+
+func gotoComplain(currentVC: UIViewController, type: String, oid: String) {
+    let url = h5BaseUrl + "/complain?type=\(type)&oid=\(oid)"
+    gotoH5(currentVC: currentVC, url: url, title: "举报")
 }

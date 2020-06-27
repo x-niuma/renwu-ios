@@ -49,7 +49,15 @@ class MicDemandTableViewCell: UITableViewCell {
         self.title.text = "\(index + 1). \(demand.title!)"
         self.appType.text = demand.appType!
         self.projectType.text = demand.projectType! + "任务"
-        self.createTime.text = demand.createTime!
+        
+        let str = demand.createTime!
+        let date = str.prefix(10)
+        let sIndex = str.index(str.startIndex, offsetBy: 11)
+        let eIndex = str.index(sIndex, offsetBy: 8)
+        let time = str[sIndex..<eIndex]
+        
+        self.createTime.text = "\(date) \(time)";
+        
         self.skill.text = demand.requires!
         self.authorNickname.text = demand.userInfo?.nickname
         self.authorAvatar.kf.setImage(with: URL(string: (demand.userInfo?.avatar)!))

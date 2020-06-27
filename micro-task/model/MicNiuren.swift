@@ -24,5 +24,5 @@ struct MicNiuren: Codable {
     var words: String?
     var residence: String?
     var background: String?
-    var rcoinNum: Int? 
+    var rcoinNum: Int?
 }

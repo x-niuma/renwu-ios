@@ -52,6 +52,7 @@
 		09722D8C244A9F88009FDAF6 /* MicWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09722D8B244A9F88009FDAF6 /* MicWebViewController.swift */; };
 		09909D3D24800D370002A41F /* MicLoginForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09909D3C24800D370002A41F /* MicLoginForm.swift */; };
 		09909D3F24800D4F0002A41F /* MicRigsterForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09909D3E24800D4F0002A41F /* MicRigsterForm.swift */; };
+		099273AD24A44B2C009E7AD7 /* MicUserAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099273AC24A44B2C009E7AD7 /* MicUserAssets.swift */; };
 		099ADFB2245D31510063A6E1 /* MicMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099ADFB1245D31510063A6E1 /* MicMeViewController.swift */; };
 		099E935D245B0344001C5AAB /* MicMeUserCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099E935C245B0344001C5AAB /* MicMeUserCard.swift */; };
 		09A453AA24504C32009559F7 /* TRefreshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A453A924504C32009559F7 /* TRefreshViewController.swift */; };
@@ -127,6 +128,7 @@
 		09722D8B244A9F88009FDAF6 /* MicWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicWebViewController.swift; sourceTree = "<group>"; };
 		09909D3C24800D370002A41F /* MicLoginForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicLoginForm.swift; sourceTree = "<group>"; };
 		09909D3E24800D4F0002A41F /* MicRigsterForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicRigsterForm.swift; sourceTree = "<group>"; };
+		099273AC24A44B2C009E7AD7 /* MicUserAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicUserAssets.swift; sourceTree = "<group>"; };
 		099ADFB1245D31510063A6E1 /* MicMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicMeViewController.swift; sourceTree = "<group>"; };
 		099E935C245B0344001C5AAB /* MicMeUserCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicMeUserCard.swift; sourceTree = "<group>"; };
 		09A453A924504C32009559F7 /* TRefreshViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRefreshViewController.swift; sourceTree = "<group>"; };
@@ -408,6 +410,7 @@
 				0958637124387CDD006017A6 /* MicProject.swift */,
 				09BCBBFE2445E71900918DAB /* MicDemand.swift */,
 				09BCBC02244610C400918DAB /* MicUser.swift */,
+				099273AC24A44B2C009E7AD7 /* MicUserAssets.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -657,6 +660,7 @@
 				0958637224387CDD006017A6 /* MicProject.swift in Sources */,
 				09F60757244757CF00C960F5 /* MicExtend.swift in Sources */,
 				090D09662437A34F005DFC45 /* MicTabbarViewController.swift in Sources */,
+				099273AD24A44B2C009E7AD7 /* MicUserAssets.swift in Sources */,
 				0958637024384341006017A6 /* MicNavigationViewController.swift in Sources */,
 				09D7497F2442FDC700FEA5FF /* MicPerson.swift in Sources */,
 				091DA1012446E0DD00F85B54 /* TaoBaoCustomTabBar.swift in Sources */,
@@ -850,7 +854,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 8U933U9276;
 				INFOPLIST_FILE = "micro-task/Info.plist";
@@ -858,6 +862,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.airtim.web;
 				PRODUCT_NAME = micro_task;
 				PROVISIONING_PROFILE_SPECIFIER = ppp;
@@ -875,7 +880,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 8U933U9276;
 				INFOPLIST_FILE = "micro-task/Info.plist";
@@ -883,6 +888,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.airtim.web;
 				PRODUCT_NAME = micro_task;
 				PROVISIONING_PROFILE_SPECIFIER = ppp;

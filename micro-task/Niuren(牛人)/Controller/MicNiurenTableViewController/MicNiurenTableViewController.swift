@@ -32,6 +32,7 @@ class MicNiurenTableViewController: UITableViewController {
         refreshControl.tintColor = UIColor.gray
         refreshControl.addTarget(self, action: #selector(loadData), for: .valueChanged);
         self.tableView.refreshControl = refreshControl
+        self.tableView.backgroundColor = UIColor.hex("#f5f5f5");
     }
     
     @objc func loadData() {
@@ -40,8 +41,7 @@ class MicNiurenTableViewController: UITableViewController {
     
     // 获取牛人榜
     func getNUserList() {
-        let url = "https://micro.airtlab.com/api/nuser"
-        AF.request(url).responseJSON { response in
+        AF.request(getNuserListUrl).responseJSON { response in
             if let resData = response.data {
                 let decoder = JSONDecoder()
                 do {

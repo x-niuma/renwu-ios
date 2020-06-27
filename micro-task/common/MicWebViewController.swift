@@ -77,6 +77,7 @@ class MicWebViewController: UIViewController {
         
         // 注册消息
         webview.configuration.userContentController.add(self, name: "login")
+        webview.configuration.userContentController.add(self, name: "getToken")
         webview.configuration.userContentController.add(self, name: "alert")
         
         // KVO观察estimatedProgress
@@ -87,10 +88,13 @@ class MicWebViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false;
+        refreshURL()
     }
     
     @objc func refreshURL(){
-        let _url = (self.webviewUrl!).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        print(micro_task.appendToken(url: self.webviewUrl!));
+//        vc.webviewUrl = appendToken(url: url)
+        let _url = (micro_task.appendToken(url: self.webviewUrl!)).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
         let url = URL(string: _url)
         if let url = url {
             webview.load(URLRequest(url: url))
@@ -122,6 +126,26 @@ extension MicWebViewController: WKNavigationDelegate {
         var requestUrl: String = ""
         if let _url = navigationAction.request.url?.absoluteString {
             requestUrl = _url
+        }
+        
+        if (requestUrl.contains("micro://complain")) {
+            let esUrl = requestUrl.removingPercentEncoding ?? ""
+             let desc = esUrl.components(separatedBy: "?")
+             let searchStr = desc[1]
+             
+             let querys = searchStr.components(separatedBy: "&")
+             var dict: Dictionary = [String: String]()
+             
+             for item in querys {
+                 let array = item.components(separatedBy: "=")
+                 let key = array[0]
+                 let value = array[1]
+                 dict[key] = value
+             }
+            
+            micro_task.gotoComplain(currentVC: self, type: dict["type"]!, oid: dict["oid"]!)
+            decisionHandler(.cancel);
+            return;
         }
         
         // 主页
@@ -238,12 +262,22 @@ extension MicWebViewController: WKScriptMessageHandler {
         if (name.isEqual(to: "login")) {
             let loginView = MicLoginViewController();
             loginView.loginCb = {(userInfo: MicPerson) in
-                let js = "\(body["callback"]!)(123)"
+                let token = micro_task.getToken()
+                let js = "\(body["callback"]!)(\"\(token)\")"
                 self.webview.evaluateJavaScript(js) { (response, error) in
                     print("response:", response ?? "No Response", "\n", "error:", error ?? "No Error")
                 }
             }
             self.present(loginView, animated: true){}
+        }
+
+        // 获取登录token
+        if (name.isEqual(to: "getToken")) {
+            let token = micro_task.getToken()
+            let js = "\(body["callback"]!)(\"\(token)\")"
+            self.webview.evaluateJavaScript(js) { (response, error) in
+              print("response:", response ?? "No Response", "\n", "error:", error ?? "No Error")
+          }
         }
     }
 }

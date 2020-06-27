@@ -138,7 +138,7 @@ extension MicSettingViewController: UITableViewDataSource, UITableViewDelegate {
     
     //跳转到应用的AppStore页页面
     func gotoAppStore() {
-        let urlString = "itms-apps://itunes.apple.com/app/id444934666"
+        let urlString = "itms-apps://itunes.apple.com/app/id1516051676"
         let url = NSURL(string: urlString)
         UIApplication.shared.openURL(url! as URL)
     }

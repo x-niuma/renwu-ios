@@ -11,7 +11,7 @@ import UIKit
 class MicChatTableViewController: MicWebViewController {
     
     override func viewDidLoad() {
-        self.webviewUrl = micro_task.appendToken(url: h5BaseUrl + "/chat")
+        self.webviewUrl = h5BaseUrl + "/chat"
         self.title = "消息"
         super.viewDidLoad()
     }

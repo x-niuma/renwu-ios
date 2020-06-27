@@ -4,7 +4,7 @@
 //
 //  Created by arraybuffer on 2020/4/30.
 //  Copyright © 2020 airtim. All rights reserved.
-//
+//  用户信息卡片
 
 import UIKit
 import Alamofire
@@ -16,7 +16,7 @@ class MicMeUserCard: UIView {
     let headerViewH = 160 + kNavBarAndStatusBarHeight
     let mainMenuH = 50
     var userInfo: MicPerson? = nil
-    var assetInfo: MicUserAssestData? = nil
+    var assetInfo: MicUserAssets? = nil
     var vc: MicMeViewController!
     let menuTitle = [
         ["title": "关注", "needLogin": true, "value": 0],
@@ -104,10 +104,10 @@ class MicMeUserCard: UIView {
         var values: [Int] = [0, 0, 0, 0, 0]
         
         if let _assetInfo = self.assetInfo {
-            values[0] = _assetInfo.followNum
-            values[1] = _assetInfo.collectNum
-            values[2] = _assetInfo.likeNum
-            values[3] = _assetInfo.pointNum
+            values[0] = _assetInfo.followNum ?? 0
+            values[1] = _assetInfo.collectNum ?? 0
+            values[2] = _assetInfo.likeNum ?? 0
+            values[3] = _assetInfo.pointNum ?? 0
         }
         
         for (index, _) in menuTitle.enumerated() {
@@ -283,15 +283,15 @@ class MicMeUserCard: UIView {
         }
     }
     
-    func updateMenu(assetInfo: MicUserAssestData) {
+    func updateMenu(assetInfo: MicUserAssets) {
         self.assetInfo = assetInfo
         var values: [Int] = [0, 0, 0, 0, 0]
         if let _assetInfo = self.assetInfo {
-            values[0] = _assetInfo.followNum
-            values[1] = _assetInfo.collectNum
-            values[2] = _assetInfo.likeNum
-            values[3] = _assetInfo.pointNum
-            values[4] = _assetInfo.rcoinNum
+            values[0] = _assetInfo.followNum ?? 0
+            values[1] = _assetInfo.collectNum ?? 0
+            values[2] = _assetInfo.likeNum ?? 0
+            values[3] = _assetInfo.pointNum ?? 0
+            values[4] = _assetInfo.rcoinNum ?? 0
         }
         for (index, btn) in menu.enumerated() {
             let label = btn.subviews[0] as! UILabel
@@ -323,6 +323,7 @@ class MicMeUserCard: UIView {
         nickname.isHidden = true
         mobile.isHidden = true
         checkin.isHidden = true
+
         loginBtn.isHidden = false
         self.userAvatar.kf.setImage(with: URL(string: kDefaultAvatar))
     }
